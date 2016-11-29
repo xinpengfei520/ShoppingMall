@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">心动商城</string>
+    <string name="zhucexieyi"><u>快速注册</u></string>
+    <string name="other_login">其他登录方式</string>
+    <string name="forgetpassword">忘记密码?</string>
+    <string name="rulemessage">我已阅读并同意</string>
+    <string name="rules">服务条款</string>
+    <string name="login">登录</string>
+    <string name="inputpassword">请输入密码</string>
+    <string name="password">密码</string>
+    <string name="phonenumber">请输入手机号/邮箱</string>
+    <string name="account">账号</string>
+    <string name="myorder">我的订单</string>
+    <string name="lookallorder">查看全部订单</string>
+    <string name="myaddress">收货地址</string>
+    <string name="mycollections">我的收藏</string>
+
+    <string name="rules_text">网站注册服务条款\n\n
+尊敬的用户，欢迎您注册成为本网站用户。在注册前请您仔细阅读如下服务条款:\n\n
+本服务协议双方为本网站与本网站用户，本服务协议具有合同效力。 
+您确认本服务协议后，本服务协议即在您和本网站之间产生法律效力。请您务必在注册之前认真阅读全部服务协议内容，如有任何疑问，可向本网站咨询。 
+无论您事实上是否在注册之前认真阅读了本服务协议，只要您点击协议正本下方的"注册"按钮并按照本网站注册程序成功注册为用户，您的行为仍然表示您同意并签署了本服务协议。\n\n  
+1.本网站服务条款的确认和接纳  
+本网站各项服务的所有权和运作权归本网站拥有。\n\n 
+2.用户必须： 
+(1)自行配备上网的所需设备， 包括个人电脑、调制解调器或其他必备上网装置。\n 
+(2)自行负担个人上网所支付的与此服务有关的电话费用、 网络费用。\n\n
+3.用户在本网站上交易平台上不得发布下列违法信息：\n
+(1).反对宪法所确定的基本原则的； \n
+(2).危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的； \n
+(3).损害国家荣誉和利益的； \n
+(4).煽动民族仇恨、民族歧视，破坏民族团结的； \n
+(5).破坏国家宗教政策，宣扬邪教和封建迷信的； \n
+(6).散布谣言，扰乱社会秩序，破坏社会稳定的； \n
+(7).散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的； \n
+(8).侮辱或者诽谤他人，侵害他人合法权益的； \n
+(9).含有法律、行政法规禁止的其他内容的。  \n\n
+4.有关个人资料 用户同意： \n
+(1).提供及时、详尽及准确的个人资料。 \n
+(2).同意接收来自本网站的信息。 \n
+(3).不断更新注册资料，符合及时、详尽准确的要求。所有原始键入的资料将引用为注册资料。 \n
+(4).本网站不公开用户的姓名、地址、电子邮箱和笔名，以下情况除外： \n
+a.用户授权本网站透露这些信息; \n
+b.相应的法律及程序要求本网站提供用户的个人资料。如果用户提供的资料包含有不正确的信息，本网站保留结束用户使用本网站信息服务资格的权利。  \n\n
+5.用户在注册时应当选择稳定性及安全性相对较好的电子邮箱，并且同意接受并阅读本网站发往用户的各类电子邮件。\n\n
+如用户未及时从自己的电子邮箱接受电子邮件或因用户电子邮箱或用户电子邮件接收及阅
+读程序本身的问题使电子邮件无法正常接收或阅读的，只要本网站成功发送了电子邮件，应当视为用户已经接收到相关的电子邮件。电子邮件在发信服务器上所记录的发出时间视为送达时间。 \n\n
+6.服务条款的修改 \n\n
+本网站有权在必要时修改服务条款，本网站服务条款一旦发生变动，将会在重要页面上提示修改内容。如果不同意所改动的内容，用户可以主动取消获得的本网站信息服务。如果用户继续享用本网站信息服务，则视为接受服务条款的变动。本网站保留随时修改或中断服务而不需通知用户的权利。本网站行使修改或中断服务的权利，不需对用户或第三方负责。  7． 用户隐私制度 
+尊重用户个人隐私是本网站的一项基本政策。所以，本网站一定不会在未经合法用户授权时公开、编辑或透露其注册资料及保存在本网站中的非公开内容，除非有法律许可要求或本网站在诚信的基础上认为透露这些信息在以下四种情况是必要的： \n\n
+(1)遵守有关法律规定，遵从本网站合法服务程序。 \n
+(2)保持维护本网站的商标所有权。 \n
+(3)在紧急情况下竭力维护用户个人和社会大众的隐私安全。 \n
+(4)符合其他相关的要求。 \n
+本网站保留发布会员人口分析资询的权利。 \n\n
+8.用户的帐号、密码和安全性 \n\n
+你一旦注册成功成为用户，你将得到一个密码和帐号。如果你不保管好自己的帐号和密码安全，将负全部责任。另外，每个用户都要对其帐户中的所有活动和事件负全责。你可随时根据指示改变你的密码，也可以结束旧的帐户重开一个新帐户。用户同意若发现任何非法使用用户帐号或安全漏洞的情况，请立即通告本网站。 \n\n 
+9.拒绝提供担保 \n\n
+用户明确同意信息服务的使用由用户个人承担风险。 本网站不担保服务不会受中断，对服务的及时性，安全性，出错发生都不作担保，但会在能力范围内，避免出错。  \n\n
+10.有限责任 \n\n
+本网站对任何直接、间接、偶然、特殊及继起的损害不负责任，这些损害来自：不正当使用本网站服务，或用户传送的信息不符合规定等。这些行为都有可能导致本网站形象受损，所以本网站事先提出这种损害的可能性，同时会尽量避免这种损害的发生。  \n\n
+11.信息的储存及限制 \n\n
+本网站有判定用户的行为是否符合本网站服务条款的要求和精神的权利，如果用户违背本网站服务条款的规定，本网站有权中断其服务的帐号。 \n\n 
+12.用户管理 用户必须遵循： \n\n
+(1)使用信息服务不作非法用途。 \n
+(2)不干扰或混乱网络服务。 \n
+(3)遵守所有使用服务的网络协议、规定、程序和惯例。用户的行为准则是以因特网法规，政策、程序和惯例为根据的。  \n\n
+13.保障 \n
+用户同意保障和维护本网站全体成员的利益，负责支付由用户使用超出服务范围引起的律师费用，违反服务条款的损害补偿费用，其它人使用用户的电脑、帐号和其它知识产权的追索费。\n\n
+</string>
+
+    ///////////////////////////////
+    <integer name="app_version_code">2</integer>
+
+    <string name="app_version">2.0.0</string>
+    <string name="proj_name">ShareSDK_TPL</string>
+    <string name="share_sdk">Share SDK</string>
+    <string name="login_with_msg">用手机号码登录</string>
+    <string name="login_with_weixin">用微信登录</string>
+    <string name="login_with_sina_weibo">用新浪微博登录</string>
+    <string name="login_with_qzone">用QQ空间登录</string>
+    <string name="login_with_other_plat">其他帐号登录</string>
+    <string name="userid_found">用户信息已存在，正在跳转登录操作…</string>
+    <string name="logining">使用%s帐号登录中…</string>
+    <string name="auth_cancel">授权操作已取消</string>
+    <string name="auth_error">授权操作遇到错误，请阅读Logcat输出; \n 如微信登录，需要微信客户端</string>
+    <string name="auth_complete">授权成功，正在跳转登录操作…</string>
+    <string name="if_register_needed">如果您需要注册功能…</string>
+    <string name="after_auth">一般来说第三方登录时，第三方平台已经为您完成用户身份校验，您可以放心让用户登录。\n\n但如果您需要判断用户是否为新用户，可以在授权操作完成后，将用户的信息通过字段“HashMap userInfo”携带给login方法。客户端通过“String userId”执行登录请求，如果服务端判定此userId为未注册用户，可以将userInfo发送给注册接口，获取用户在此平台上的昵称、头像等数据，然后执行注册</string>
+
+    <string name="tpl_ok">确定</string>
+    <string name="tpl_cancel">取消</string>
+
+    <string name="tpl_key_user_icon">头像</string>
+    <string name="tpl_key_user_name">昵称</string>
+    <string name="tpl_key_user_gender">性别</string>
+    <string name="tpl_key_user_note">备注</string>
+
+    <string name="tpl_value_user_name">昵称</string>
+    <string name="tpl_value_user_gender">性别</string>
+    <string name="tpl_value_user_note">请填写备注信息</string>
+
+    <string name="tpl_sign_user_info">用户信息</string>
+    <string name="tpl_sign_up">注册</string>
+    <string name="tpl_girl">女</string>
+    <string name="tpl_boy">男</string>
+
+    <string name="tpl_camera">拍照</string>
+    <string name="tpl_picture">从相册获取</string>
+
+    <string name="tpl_change_user_name_title">更改名字</string>
+    <string name="tpl_change_user_note_title">更改备注</string>
+    <string name="tpl_input_user_name_hint">好名字可以让你的朋友更容易记住你</string>
+    <string name="tpl_input_user_note_hint">自定义备注信息，给你带来更多吸引</string>
+
+    <string name="tpl_no_sdcard">sdcard 卡不存在</string>
+    <string name="tpl_msg_login_hint">请输入手机号码</string>
+    <string name="tpl_verify_code_hint">请输验证码</string>
+    <string name="tpl_get_verify_code">获取验证码</string>
+    <string name="tpl_send_verify_code">检验验证码</string>
+    <string name="signup_success">注册成功</string>
+    <string name="signup_failed">注册失败</string>
+
+</resources>

@@ -1,0 +1,1 @@
+include ':app', ':banner', ':QRCode_lib', ':FlycoTabLayout_lib', ':ViewPagerIndicator_lib', ':OpenDanmu_lib'

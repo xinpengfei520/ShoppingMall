@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FlycoTabLayout_lib/FlycoTabLayout_lib.iml" filepath="$PROJECT_DIR$/FlycoTabLayout_lib/FlycoTabLayout_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenDanmu_lib/OpenDanmu_lib.iml" filepath="$PROJECT_DIR$/OpenDanmu_lib/OpenDanmu_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QRCode_lib/QRCode_lib.iml" filepath="$PROJECT_DIR$/QRCode_lib/QRCode_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShoppingMall.iml" filepath="$PROJECT_DIR$/ShoppingMall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicator_lib/ViewPagerIndicator_lib.iml" filepath="$PROJECT_DIR$/ViewPagerIndicator_lib/ViewPagerIndicator_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banner/banner.iml" filepath="$PROJECT_DIR$/banner/banner.iml" />
+    </modules>
+  </component>
+</project>
