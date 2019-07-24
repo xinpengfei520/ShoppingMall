@@ -139,3 +139,10 @@ task("uploadApk") {
 }
 
 uploadApk.dependsOn("assembleRelease")
+
+/*
+ * 打包命令：
+ * ./gradlew assembleRelease
+ * 打包上传 APK:
+ * ./gradlew :app:uploadApk
+ */
