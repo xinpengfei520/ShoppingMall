@@ -11,7 +11,7 @@ public class Constants {
     // 使用内置模拟器的地址(本地ip或者10.0.2.2)
 //    public static final String BASE = "http://192.168.1.189:8080";
     // 使用wifi共享软件的网关地址
-        public static final String BASE = "http://10.0.2.2:8080";
+    public static final String BASE = "http://10.0.2.2:8080";
 
     // 请求Json数据基本URL
     public static final String Base_URL_JSON = BASE + "/atguigu/json/";
@@ -22,7 +22,7 @@ public class Constants {
     // 使用内置模拟器的地址(本地ip或者10.0.2.2)
 //    public static String BASE_URL = "http://192.168.1.189:8080/atguigu";
     // 使用wifi共享软件的网关地址
-        public static String BASE_URL = "http://10.0.2.2:8080/atguigu";
+    public static String BASE_URL = "http://10.0.2.2:8080/atguigu";
 
     /**
      * 主页面的路径

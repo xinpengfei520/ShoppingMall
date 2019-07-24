@@ -126,7 +126,7 @@
 -keepattributes EnclosingMethod
 
 # Application classes that will be serialized/deserialized over Gson
--keep class com.atguigu.shoppingmall.domain.** { <fields>; }
+-keep class com.xpf.shoppingmall.domain.** { <fields>; }
 
 # Prevent proguard from stripping interface information from TypeAdapterFactory,
 # JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)
