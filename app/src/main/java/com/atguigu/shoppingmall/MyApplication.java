@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -39,10 +40,15 @@ public class MyApplication extends Application {
         // 初始化okhttpClient
         initOkhttpClient();
 
-        JPushInterface.setDebugMode(true);    // 设置开启日志,发布时请关闭日志
-        JPushInterface.init(this);            // 初始化 JPush
+        // 设置开启日志,发布时请关闭日志
+        JPushInterface.setDebugMode(true);
+        // 初始化 JPush
+        JPushInterface.init(this);
 
-        ShareSDK.initSDK(this); // 初始化sharedSDK
+        // 初始化sharedSDK
+        ShareSDK.initSDK(this);
+
+        CrashReport.initCrashReport(getApplicationContext(), "a49bb24dcd", BuildConfig.DEBUG);
     }
 
     private void initOkhttpClient() {
