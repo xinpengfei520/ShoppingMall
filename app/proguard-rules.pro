@@ -28,7 +28,6 @@
 -printmapping proguardMapping.txt
 -optimizations !code/simplification/cast,!field/*,!class/merging/*
 -keepattributes *Annotation*,*JavascriptInterface*,InnerClasses,Signature,SourceFile,LineNumberTable
-#-ignorewarning
 #--------------------------------- 基本指令区 start ----------------------------------
 
 #--------------------------------- 默认保留区 start ----------------------------------
