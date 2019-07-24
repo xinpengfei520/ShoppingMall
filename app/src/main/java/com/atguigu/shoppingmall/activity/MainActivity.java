@@ -20,6 +20,7 @@ import com.atguigu.shoppingmall.fragment.HomeFragment;
 import com.atguigu.shoppingmall.fragment.ShoppingCartFragment;
 import com.atguigu.shoppingmall.fragment.TypeFragment;
 import com.atguigu.shoppingmall.fragment.UserFragment;
+import com.xsir.pgyerappupdate.library.PgyerApi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class MainActivity extends FragmentActivity {
     RadioGroup rgMain;
     private List<BaseFragment> fragments = new ArrayList<>();
     private int position = 0;
-    private Fragment tempFragemnt;
+    private Fragment tempFragment;
     private TypeFragment typeFragment;
 
     private boolean isFlag = true;
@@ -54,12 +55,8 @@ public class MainActivity extends FragmentActivity {
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case MESSAGE_BACK:
-                    isFlag = true; // 在2s时,恢复isFlag的变量值
-                    break;
-                default:
-                    break;
+            if (msg.what == MESSAGE_BACK) {
+                isFlag = true; // 在2s时,恢复isFlag的变量值
             }
         }
     };
@@ -73,69 +70,62 @@ public class MainActivity extends FragmentActivity {
         initFragment();
         initListener();
         rgMain.check(R.id.rb_home);
+        PgyerApi.checkUpdate(this);
     }
 
     private void initListener() {
-        rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.rb_home:
-                        position = 0;
-                        typeFragment.hideFragment();
-                        break;
-
-                    case R.id.rb_type:
-                        position = 1;
-                        int currentTab = typeFragment.getCurrentTab();
-                        if (currentTab == 0) {
-                            if (typeFragment.typeListFragment != null) {
-                                getSupportFragmentManager().beginTransaction()
-                                        .show(typeFragment.typeListFragment)
-                                        .commit();
-                            }
-                        } else {
-                            if (typeFragment.typeTagFragment != null) {
-                                getSupportFragmentManager().beginTransaction()
-                                        .show(typeFragment.typeTagFragment)
-                                        .commit();
-                            }
+        rgMain.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.rb_home:
+                    position = 0;
+                    typeFragment.hideFragment();
+                    break;
+                case R.id.rb_type:
+                    position = 1;
+                    int currentTab = typeFragment.getCurrentTab();
+                    if (currentTab == 0) {
+                        if (typeFragment.typeListFragment != null) {
+                            getSupportFragmentManager().beginTransaction()
+                                    .show(typeFragment.typeListFragment)
+                                    .commit();
                         }
-                        break;
-
-                    case R.id.rb_community:
-                        position = 2;
-                        typeFragment.hideFragment();
-                        break;
-
-                    case R.id.rb_cart:
-                        position = 3;
-                        fragments.remove(fragments.get(3));
-                        ShoppingCartFragment cartFragment = new ShoppingCartFragment();
-                        fragments.add(3, cartFragment);
-                        typeFragment.hideFragment();
-                        break;
-
-                    case R.id.rb_user:
-                        position = 4;
-                        typeFragment.hideFragment();
-                        break;
-
-                    default:
-                        position = 0;
-                        break;
-                }
-                BaseFragment frament = getFrament(position);
-                switchFragment(tempFragemnt, frament);
+                    } else {
+                        if (typeFragment.typeTagFragment != null) {
+                            getSupportFragmentManager().beginTransaction()
+                                    .show(typeFragment.typeTagFragment)
+                                    .commit();
+                        }
+                    }
+                    break;
+                case R.id.rb_community:
+                    position = 2;
+                    typeFragment.hideFragment();
+                    break;
+                case R.id.rb_cart:
+                    position = 3;
+                    fragments.remove(fragments.get(3));
+                    ShoppingCartFragment cartFragment = new ShoppingCartFragment();
+                    fragments.add(3, cartFragment);
+                    typeFragment.hideFragment();
+                    break;
+                case R.id.rb_user:
+                    position = 4;
+                    typeFragment.hideFragment();
+                    break;
+                default:
+                    position = 0;
+                    break;
             }
+
+            BaseFragment fragment = getFragment(position);
+            switchFragment(tempFragment, fragment);
         });
 
     }
 
-    private BaseFragment getFrament(int position) {
+    private BaseFragment getFragment(int position) {
         if (fragments != null && fragments.size() > 0) {
-            BaseFragment baseFragment = fragments.get(position);
-            return baseFragment;
+            return fragments.get(position);
         }
         return null;
     }
@@ -151,8 +141,8 @@ public class MainActivity extends FragmentActivity {
     }
 
     private void switchFragment(Fragment fromFragment, BaseFragment nextFragment) {
-        if (tempFragemnt != nextFragment) {
-            tempFragemnt = nextFragment;
+        if (tempFragment != nextFragment) {
+            tempFragment = nextFragment;
             if (nextFragment != null) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 // 判断nextFragment是否添加

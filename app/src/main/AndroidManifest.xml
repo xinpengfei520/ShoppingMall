@@ -286,6 +286,15 @@
             android:value="7dc744db1d638ddc1c0aa072" /> <!-- 值来自开发者平台取得的AppKey -->
         <!-- JPush end -->
 
+        <!-- 蒲公英 apiKey -->
+        <meta-data
+            android:name="PGYER_API_KEY"
+            android:value="534a49154990d8e9126918fbdbee611a" />
+        <!-- 蒲公英 appKey -->
+        <meta-data
+            android:name="PGYER_APP_KEY"
+            android:value="c37f265d95604d517e37ef4328ac763d" />
+
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
