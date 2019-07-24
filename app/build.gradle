@@ -19,11 +19,49 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
+
+    signingConfigs {
+        debug {
+            storeFile file("signature.jks")
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
+        }
         release {
+            storeFile file("signature.jks")
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
+        }
+    }
+
+    buildTypes {
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = getApkName()
+                }
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 
@@ -52,3 +90,52 @@ dependencies {
     implementation project(':FlycoTabLayout_lib')
     implementation project(':ViewPagerIndicator_lib')
 }
+
+def getApkFullPath() {
+    return rootDir.getAbsolutePath() + "/app/build/outputs/apk/release/" + getApkName()
+}
+
+def getApkName() {
+    return "ShoppingMall-V${android.defaultConfig.versionName}-${releaseTime()}.apk"
+}
+
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+def readProperties(key) {
+    File file = rootProject.file('local.properties')
+    if (file.exists()) {
+        InputStream inputStream = rootProject.file('local.properties').newDataInputStream()
+        Properties properties = new Properties()
+        properties.load(inputStream)
+
+        if (properties.containsKey(key)) {
+            return properties.getProperty(key)
+        }
+    }
+}
+
+static def getUpdateDescription() {
+    return '1.提升用户体验;\n2.修复一些bug;'
+}
+
+task("uploadApk") {
+    doLast {
+        def command = "curl -F \"file=@${getApkFullPath()}\" -F \"uKey=${readProperties('pgyer.userKey')}\" -F \"_api_key=${readProperties('pgyer.apiKey')}\" -F \"buildUpdateDescription=${getUpdateDescription()}\" https://www.pgyer.com/apiv2/app/upload"
+        println "command:" + command
+
+        try {
+            exec {
+                ExecSpec execSpec ->
+                    executable 'bash'
+                    args '-c', command
+            }
+            println "uploadApk success~"
+        } catch (Exception e) {
+            e.printStackTrace()
+        }
+    }
+}
+
+uploadApk.dependsOn("assembleRelease")
