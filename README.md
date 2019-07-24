@@ -1,9 +1,13 @@
 # ShoppingMall
-心动商城  
+
+心动商城
+
+[点击下载](https://www.pgyer.com/android_shopping_mall)
 
 ![image](https://github.com/xinpengfei520/ShoppingMall/blob/master/screenshot/image.gif)
 
-###主要技术点：  
+## 主要技术点：  
+
 1.使用RadioGroup + Fragment搭建软件框架；  
 2.使用分类型的RecyclerView展示首页数据；  
 3.自定义可以放入两个布局的ScrollView来实现上拉显示商品详情数据；   

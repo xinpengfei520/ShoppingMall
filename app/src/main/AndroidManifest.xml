@@ -293,7 +293,7 @@
         <!-- 蒲公英 appKey -->
         <meta-data
             android:name="PGYER_APP_KEY"
-            android:value="c37f265d95604d517e37ef4328ac763d" />
+            android:value="51e0265ea942ed726bcfd8bf7b2be333" />
 
         <uses-library
             android:name="org.apache.http.legacy"
