@@ -28,6 +28,7 @@ import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerClickListener;
+import com.youth.banner.loader.ImageLoader;
 import com.zhy.magicviewpager.transformer.ScaleInTransformer;
 
 import java.text.SimpleDateFormat;
@@ -281,9 +282,7 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             adapter.setOnSeckillRecyclerView(new SecKillRecyclerViewAdapter.OnSeckillRecyclerView() {
                 @Override
                 public void onItemClick(int position) {
-//                    Toast.makeText(mContext, "秒杀===" + position, Toast.LENGTH_SHORT).show();
                     ResultBeanData.ResultBean.SeckillInfoBean.ListBean listBean = seckill_info.getList().get(position);
-
                     GoodsBean goodsBean = new GoodsBean();
                     goodsBean.setName(listBean.getName());
                     goodsBean.setCover_price(listBean.getCover_price());
@@ -407,7 +406,6 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
 
         public void setData(List<ResultBeanData.ResultBean.BannerInfoBean> banner_info) {
-
             List<String> imageUrls = new ArrayList<>();
             // 得到图片地址的集合
             for (int i = 0; i < banner_info.size(); i++) {
@@ -419,23 +417,25 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
             // 设置BANNER的切换的样式
             banner.setBannerAnimation(Transformer.DepthPage);
-//            banner.setImages(imageUrls, new OnLoadImageListener() {
-//                @Override
-//                public void OnLoadImage(ImageView view, Object url) {
-//
-//                    // 联网请求图片
-//                    Glide.with(mContext).load(Constants.BASE_URL_IMAGE + url).into(view);
-//                }
-//            });
+            banner.setImageLoader(new ImageLoader() {
+                @Override
+                public void displayImage(Context context, Object path, ImageView imageView) {
+                    // 联网请求图片
+                    Glide.with(mContext).load(Constants.BASE_URL_IMAGE + path).into(imageView);
+                }
+            });
+
+            banner.setImages(imageUrls);
 
             // 设置banner的点击事件
             banner.setOnBannerClickListener(new OnBannerClickListener() {
                 @Override
                 public void OnBannerClick(int position) {
-//                    Toast.makeText(mContext, "position==" + position, Toast.LENGTH_SHORT).show();
                     mContext.startActivity(new Intent(mContext, GoodsInfoActivity.class));
                 }
             });
+
+            banner.start();
         }
     }
 }
