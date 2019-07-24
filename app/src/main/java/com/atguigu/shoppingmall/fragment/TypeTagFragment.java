@@ -16,7 +16,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 
@@ -28,7 +28,7 @@ import okhttp3.Call;
 
 public class TypeTagFragment extends BaseFragment {
 
-    @Bind(R.id.gv_tag)
+    @BindView(R.id.gv_tag)
     GridView gvTag;
     private TagGridViewAdapter adapter;
     private List<TagBean.ResultBean> result;
@@ -90,6 +90,5 @@ public class TypeTagFragment extends BaseFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

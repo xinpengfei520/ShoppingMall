@@ -27,7 +27,7 @@ import com.atguigu.shoppingmall.utils.CartStorage;
 import com.atguigu.shoppingmall.utils.Constants;
 import com.bumptech.glide.Glide;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.sharesdk.onekeyshare.OnekeyShare;
@@ -35,45 +35,45 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 // 商品详情页面
 public class GoodsInfoActivity extends Activity implements View.OnClickListener {
 
-    @Bind(R.id.ib_good_info_back)
+    @BindView(R.id.ib_good_info_back)
     ImageButton ibGoodInfoBack;
-    @Bind(R.id.ib_good_info_more)
+    @BindView(R.id.ib_good_info_more)
     ImageButton ibGoodInfoMore;
-    @Bind(R.id.iv_good_info_image)
+    @BindView(R.id.iv_good_info_image)
     ImageView ivGoodInfoImage;
-    @Bind(R.id.tv_good_info_name)
+    @BindView(R.id.tv_good_info_name)
     TextView tvGoodInfoName;
-    @Bind(R.id.tv_good_info_desc)
+    @BindView(R.id.tv_good_info_desc)
     TextView tvGoodInfoDesc;
-    @Bind(R.id.tv_good_info_price)
+    @BindView(R.id.tv_good_info_price)
     TextView tvGoodInfoPrice;
-    @Bind(R.id.tv_good_info_store)
+    @BindView(R.id.tv_good_info_store)
     TextView tvGoodInfoStore;
-    @Bind(R.id.tv_good_info_style)
+    @BindView(R.id.tv_good_info_style)
     TextView tvGoodInfoStyle;
-    @Bind(R.id.wb_good_info_more)
+    @BindView(R.id.wb_good_info_more)
     WebView wbGoodInfoMore;
-    @Bind(R.id.tv_good_info_callcenter)
+    @BindView(R.id.tv_good_info_callcenter)
     TextView tvGoodInfoCallcenter;
-    @Bind(R.id.tv_good_info_collection)
+    @BindView(R.id.tv_good_info_collection)
     TextView tvGoodInfoCollection;
-    @Bind(R.id.tv_good_info_cart)
+    @BindView(R.id.tv_good_info_cart)
     TextView tvGoodInfoCart;
-    @Bind(R.id.btn_good_info_addcart)
+    @BindView(R.id.btn_good_info_addcart)
     Button btnGoodInfoAddcart;
-    @Bind(R.id.ll_goods_root)
+    @BindView(R.id.ll_goods_root)
     LinearLayout llGoodsRoot;
-    @Bind(R.id.tv_more_share)
+    @BindView(R.id.tv_more_share)
     TextView tvMoreShare;
-    @Bind(R.id.tv_more_search)
+    @BindView(R.id.tv_more_search)
     TextView tvMoreSearch;
-    @Bind(R.id.tv_more_home)
+    @BindView(R.id.tv_more_home)
     TextView tvMoreHome;
-    @Bind(R.id.btn_more)
+    @BindView(R.id.btn_more)
     Button btnMore;
-    @Bind(R.id.ll_root)
+    @BindView(R.id.ll_root)
     LinearLayout llRoot;
-    @Bind(R.id.activity_goods_info)
+    @BindView(R.id.activity_goods_info)
     LinearLayout activityGoodsInfo;
 
     private GoodsBean goodsBean;
@@ -131,6 +131,7 @@ public class GoodsInfoActivity extends Activity implements View.OnClickListener 
         }
     }
 
+    @Override
     @OnClick({R.id.ib_good_info_back, R.id.ib_good_info_more, R.id.iv_good_info_image,
             R.id.tv_good_info_style, R.id.wb_good_info_more, R.id.tv_good_info_callcenter,
             R.id.tv_good_info_collection, R.id.tv_good_info_cart,

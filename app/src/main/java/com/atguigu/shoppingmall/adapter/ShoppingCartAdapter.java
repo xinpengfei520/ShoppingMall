@@ -18,7 +18,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -248,15 +248,15 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.cb_gov)
+        @BindView(R.id.cb_gov)
         CheckBox cbGov;
-        @Bind(R.id.iv_gov)
+        @BindView(R.id.iv_gov)
         ImageView ivGov;
-        @Bind(R.id.tv_desc_gov)
+        @BindView(R.id.tv_desc_gov)
         TextView tvDescGov;
-        @Bind(R.id.tv_price_gov)
+        @BindView(R.id.tv_price_gov)
         TextView tvPriceGov;
-        @Bind(R.id.ddSubView)
+        @BindView(R.id.ddSubView)
         AddSubView ddSubView;
 
         ViewHolder(View itemView) {

@@ -6,13 +6,13 @@ import android.widget.TextView;
 
 import com.atguigu.shoppingmall.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class RulesActivity extends Activity {
 
-    @Bind(R.id.tv_agreed)
+    @BindView(R.id.tv_agreed)
     TextView tvAgreed;
 
     @Override

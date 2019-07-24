@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -47,29 +47,29 @@ import butterknife.OnClick;
 
 public class ShoppingCartFragment extends BaseFragment {
 
-    @Bind(R.id.tv_shopcart_edit)
+    @BindView(R.id.tv_shopcart_edit)
     TextView tvShopcartEdit;
-    @Bind(R.id.recyclerview)
+    @BindView(R.id.recyclerview)
     RecyclerView recyclerview;
-    @Bind(R.id.checkbox_all)
+    @BindView(R.id.checkbox_all)
     CheckBox checkboxAll;
-    @Bind(R.id.tv_shopcart_total)
+    @BindView(R.id.tv_shopcart_total)
     TextView tvShopcartTotal;
-    @Bind(R.id.btn_check_out)
+    @BindView(R.id.btn_check_out)
     Button btnCheckOut;
-    @Bind(R.id.ll_check_all)
+    @BindView(R.id.ll_check_all)
     LinearLayout llCheckAll;
-    @Bind(R.id.cb_all)
+    @BindView(R.id.cb_all)
     CheckBox cbAll;
-    @Bind(R.id.btn_delete)
+    @BindView(R.id.btn_delete)
     Button btnDelete;
-    @Bind(R.id.btn_collection)
+    @BindView(R.id.btn_collection)
     Button btnCollection;
-    @Bind(R.id.ll_delete)
+    @BindView(R.id.ll_delete)
     LinearLayout llDelete;
-    @Bind(R.id.btn_tobuy)
+    @BindView(R.id.btn_tobuy)
     Button btnTobuy;
-    @Bind(R.id.rl_nodata)
+    @BindView(R.id.rl_nodata)
     RelativeLayout rlNodata;
     private ShoppingCartAdapter adapter;
 
@@ -178,12 +178,6 @@ public class ShoppingCartFragment extends BaseFragment {
         tvShopcartEdit.setVisibility(View.GONE);
         llDelete.setVisibility(View.GONE);
         llCheckAll.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @OnClick({R.id.tv_shopcart_edit, R.id.checkbox_all, R.id.tv_shopcart_total,

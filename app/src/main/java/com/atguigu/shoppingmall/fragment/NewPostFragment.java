@@ -16,7 +16,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 
@@ -28,7 +28,7 @@ import okhttp3.Call;
 
 public class NewPostFragment extends BaseFragment {
 
-    @Bind(R.id.lv_new_post)
+    @BindView(R.id.lv_new_post)
     ListView lvNewPost;
     private List<NewPostBean.ResultBean> result;
     private NewPostListViewAdapter adapter;
@@ -64,7 +64,6 @@ public class NewPostFragment extends BaseFragment {
 
         @Override
         public void onResponse(String response, int id) {
-
             switch (id) {
                 case 100:
                     if (response != null) {
@@ -88,6 +87,5 @@ public class NewPostFragment extends BaseFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

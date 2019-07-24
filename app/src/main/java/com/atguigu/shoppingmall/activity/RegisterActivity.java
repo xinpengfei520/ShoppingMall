@@ -18,7 +18,7 @@ import com.atguigu.shoppingmall.utils.Constants;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.Call;
@@ -26,17 +26,17 @@ import okhttp3.Call;
 // 注册账号页面
 public class RegisterActivity extends Activity {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView ivBack;
-    @Bind(R.id.et_register_phone)
+    @BindView(R.id.et_register_phone)
     EditText etRegisterPhone;
-    @Bind(R.id.et_register_pwd)
+    @BindView(R.id.et_register_pwd)
     EditText etRegisterPwd;
-    @Bind(R.id.et_code)
+    @BindView(R.id.et_code)
     EditText etCode;
-    @Bind(R.id.send_code)
+    @BindView(R.id.send_code)
     TextView sendCode;
-    @Bind(R.id.btn_register)
+    @BindView(R.id.btn_register)
     Button btnRegister;
 
     @Override

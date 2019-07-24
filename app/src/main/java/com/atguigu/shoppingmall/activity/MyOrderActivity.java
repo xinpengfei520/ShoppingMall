@@ -12,24 +12,22 @@ import android.widget.Toast;
 import com.atguigu.shoppingmall.R;
 import com.atguigu.shoppingmall.adapter.MyOrderRecyclerAdapter;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 // 订单页面
 public class MyOrderActivity extends Activity {
 
-    @Bind(R.id.iv_search)
+    @BindView(R.id.iv_search)
     ImageView ivSearch;
-    @Bind(R.id.iv_more)
+    @BindView(R.id.iv_more)
     ImageView ivMore;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView ivBack;
-//    @Bind(R.id.indicator)
-//    TabPageIndicator indicator;
-    @Bind(R.id.recyclerview)
+    @BindView(R.id.recyclerview)
     RecyclerView recyclerview;
-    @Bind(R.id.activity_my_order)
+    @BindView(R.id.activity_my_order)
     LinearLayout activityMyOrder;
     private MyOrderRecyclerAdapter adapter;
 

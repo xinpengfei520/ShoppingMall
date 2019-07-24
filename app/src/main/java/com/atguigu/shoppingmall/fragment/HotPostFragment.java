@@ -16,7 +16,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 
@@ -28,7 +28,7 @@ import okhttp3.Call;
 
 public class HotPostFragment extends BaseFragment {
 
-    @Bind(R.id.lv_hot_post)
+    @BindView(R.id.lv_hot_post)
     ListView lvHotPost;
     private List<HotPostBean.ResultBean> result;
     private HotPostListViewAdapter adapter;
@@ -84,11 +84,5 @@ public class HotPostFragment extends BaseFragment {
 
     private void processData(String json) {
         result = new Gson().fromJson(json, HotPostBean.class).getResult();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

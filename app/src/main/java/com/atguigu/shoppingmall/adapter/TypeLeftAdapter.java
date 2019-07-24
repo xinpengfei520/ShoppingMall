@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.atguigu.shoppingmall.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -73,7 +73,7 @@ public class TypeLeftAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        @Bind(R.id.tv_title)
+        @BindView(R.id.tv_title)
         TextView tvTitle;
 
         ViewHolder(View view) {

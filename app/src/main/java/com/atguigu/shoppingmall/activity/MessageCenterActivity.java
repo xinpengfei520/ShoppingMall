@@ -6,14 +6,14 @@ import android.widget.ImageButton;
 
 import com.atguigu.shoppingmall.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 // 消息中心页面
 public class MessageCenterActivity extends Activity {
 
-    @Bind(R.id.ib_login_back)
+    @BindView(R.id.ib_login_back)
     ImageButton ibLoginBack;
 
     @Override

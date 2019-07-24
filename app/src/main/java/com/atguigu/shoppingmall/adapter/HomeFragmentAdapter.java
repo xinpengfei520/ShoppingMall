@@ -28,7 +28,6 @@ import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerClickListener;
-import com.youth.banner.listener.OnLoadImageListener;
 import com.zhy.magicviewpager.transformer.ScaleInTransformer;
 
 import java.text.SimpleDateFormat;
@@ -420,14 +419,14 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
             // 设置BANNER的切换的样式
             banner.setBannerAnimation(Transformer.DepthPage);
-            banner.setImages(imageUrls, new OnLoadImageListener() {
-                @Override
-                public void OnLoadImage(ImageView view, Object url) {
-
-                    // 联网请求图片
-                    Glide.with(mContext).load(Constants.BASE_URL_IMAGE + url).into(view);
-                }
-            });
+//            banner.setImages(imageUrls, new OnLoadImageListener() {
+//                @Override
+//                public void OnLoadImage(ImageView view, Object url) {
+//
+//                    // 联网请求图片
+//                    Glide.with(mContext).load(Constants.BASE_URL_IMAGE + url).into(view);
+//                }
+//            });
 
             // 设置banner的点击事件
             banner.setOnBannerClickListener(new OnBannerClickListener() {

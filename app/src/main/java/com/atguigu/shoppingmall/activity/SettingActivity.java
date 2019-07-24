@@ -6,13 +6,13 @@ import android.widget.ImageView;
 
 import com.atguigu.shoppingmall.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SettingActivity extends Activity {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView ivBack;
 
     @Override

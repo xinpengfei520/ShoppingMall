@@ -10,7 +10,7 @@ import com.atguigu.shoppingmall.R;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -65,7 +65,7 @@ public class HistoryRecordAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        @Bind(R.id.tv_history)
+        @BindView(R.id.tv_history)
         TextView tvHistory;
 
         ViewHolder(View view) {

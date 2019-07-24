@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion rootProject.compileSdkVersion
     defaultConfig {
         applicationId "com.atguigu.shoppingmall"
-        minSdkVersion 16
-        targetSdkVersion 24
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -20,22 +20,27 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile 'junit:junit:4.12'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.android.support:support-v4:24.2.0'
-    compile 'com.android.support:recyclerview-v7:24.2.0'
-    compile 'com.zhy:okhttputils:2.6.2'
-    compile 'com.zhy:magic-viewpager:1.0.1'
-    compile 'com.google.code.gson:gson:2.8.0'
-    compile 'com.alibaba:fastjson:1.1.54.android'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile project(':banner')
-    compile project(':QRCode_lib')
-    compile project(':OpenDanmu_lib')
-    compile project(':FlycoTabLayout_lib')
-    compile project(':ViewPagerIndicator_lib')
+    testImplementation 'junit:junit:4.12'
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation('com.jakewharton:butterknife:8.8.1', {
+        exclude group: "com.android.support"
+    })
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.zhy:okhttputils:2.6.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.zhy:magic-viewpager:1.0.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.alibaba:fastjson:1.1.54.android'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.youth.banner:banner:1.4.10'
+    //implementation project(':banner')
+    implementation project(':QRCode_lib')
+    implementation project(':OpenDanmu_lib')
+    implementation project(':FlycoTabLayout_lib')
+    implementation project(':ViewPagerIndicator_lib')
 }

@@ -19,7 +19,7 @@ import com.atguigu.shoppingmall.utils.Constants;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.Call;
@@ -34,22 +34,21 @@ import static com.atguigu.shoppingmall.R.id.ib_top;
 
 public class HomeFragment extends BaseFragment {
 
-    @Bind(R.id.tv_search_home)
+    @BindView(R.id.tv_search_home)
     TextView tvSearchHome;
-    @Bind(R.id.tv_message_home)
+    @BindView(R.id.tv_message_home)
     TextView tvMessageHome;
-    @Bind(R.id.rv_home)
+    @BindView(R.id.rv_home)
     RecyclerView rvHome;
-    @Bind(R.id.tv_scan)
+    @BindView(R.id.tv_scan)
     TextView tvScan;
-    @Bind(R.id.ib_top)
+    @BindView(R.id.ib_top)
     ImageButton ibTop;
     private ResultBeanData.ResultBean resultBean;
     private HomeFragmentAdapter adapter;
 
     @Override
     public View initView() {
-
         Log.e("TAG", "主页面的UI被初始化了");
         View view = View.inflate(mContext, R.layout.fragment_home, null);
         ButterKnife.bind(this, view);
@@ -60,7 +59,6 @@ public class HomeFragment extends BaseFragment {
     public void initData() {
         super.initData();
         Log.e("TAG", "主页面的数据被初始化了");
-
         getDataFromNet();
     }
 
@@ -129,7 +127,6 @@ public class HomeFragment extends BaseFragment {
             case R.id.tv_message_home:
                 break;
             case R.id.rv_home:
-
                 break;
             case ib_top:
                 rvHome.scrollToPosition(0); // 回到顶部
@@ -140,9 +137,4 @@ public class HomeFragment extends BaseFragment {
         }
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
 }

@@ -1,5 +1,6 @@
 package com.atguigu.shoppingmall.activity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -23,38 +24,41 @@ import com.atguigu.shoppingmall.fragment.UserFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends FragmentActivity {
 
-    @Bind(R.id.frameLayout)
-    FrameLayout frameLayout;
-    @Bind(R.id.rb_home)
-    RadioButton rbHome;
-    @Bind(R.id.rb_type)
-    RadioButton rbType;
-    @Bind(R.id.rb_community)
-    RadioButton rbCommunity;
-    @Bind(R.id.rb_cart)
-    RadioButton rbCart;
-    @Bind(R.id.rb_user)
-    RadioButton rbUser;
-    @Bind(R.id.rg_main)
-    RadioGroup rgMain;
-
     private static final int MESSAGE_BACK = 1;
+    @BindView(R.id.frameLayout)
+    FrameLayout frameLayout;
+    @BindView(R.id.rb_home)
+    RadioButton rbHome;
+    @BindView(R.id.rb_type)
+    RadioButton rbType;
+    @BindView(R.id.rb_community)
+    RadioButton rbCommunity;
+    @BindView(R.id.rb_cart)
+    RadioButton rbCart;
+    @BindView(R.id.rb_user)
+    RadioButton rbUser;
+    @BindView(R.id.rg_main)
+    RadioGroup rgMain;
     private List<BaseFragment> fragments = new ArrayList<>();
     private int position = 0;
     private Fragment tempFragemnt;
     private TypeFragment typeFragment;
 
     private boolean isFlag = true;
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
+        @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MESSAGE_BACK:
                     isFlag = true; // 在2s时,恢复isFlag的变量值
+                    break;
+                default:
                     break;
             }
         }
@@ -66,7 +70,6 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         initFragment();
         initListener();
         rgMain.check(R.id.rb_home);
@@ -171,12 +174,11 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void toGoShopping() {
-        rgMain.check(R.id.home);
+        rgMain.check(R.id.rb_home);
     }
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-
         if (keyCode == KeyEvent.KEYCODE_BACK && isFlag) {
             isFlag = false;
             Toast.makeText(MainActivity.this, "再点击一次返回键退出应用", Toast.LENGTH_SHORT).show();

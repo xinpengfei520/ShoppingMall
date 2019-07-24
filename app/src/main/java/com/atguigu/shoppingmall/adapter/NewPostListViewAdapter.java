@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -121,23 +121,23 @@ public class NewPostListViewAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        @Bind(R.id.tv_community_username)
+        @BindView(R.id.tv_community_username)
         TextView tvCommunityUsername;
-        @Bind(R.id.tv_community_addtime)
+        @BindView(R.id.tv_community_addtime)
         TextView tvCommunityAddtime;
-        @Bind(R.id.rl)
+        @BindView(R.id.rl)
         RelativeLayout rl;
-        @Bind(R.id.iv_community_figure)
+        @BindView(R.id.iv_community_figure)
         ImageView ivCommunityFigure;
-        @Bind(R.id.danmakuView)
+        @BindView(R.id.danmakuView)
         DanmakuView danmakuView;
-        @Bind(R.id.tv_community_saying)
+        @BindView(R.id.tv_community_saying)
         TextView tvCommunitySaying;
-        @Bind(R.id.tv_community_likes)
+        @BindView(R.id.tv_community_likes)
         TextView tvCommunityLikes;
-        @Bind(R.id.tv_community_comments)
+        @BindView(R.id.tv_community_comments)
         TextView tvCommunityComments;
-        @Bind(R.id.ib_new_post_avatar)
+        @BindView(R.id.ib_new_post_avatar)
         ImageButton ibNewPostAvatar;
 
         ViewHolder(View view) {

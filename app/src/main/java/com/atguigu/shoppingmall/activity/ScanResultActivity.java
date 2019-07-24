@@ -5,21 +5,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.atguigu.shoppingmall.R;
 import com.xys.libzxing.zxing.activity.CaptureActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ScanResultActivity extends Activity {
 
-    @Bind(R.id.tv_content)
+
+    @BindView(R.id.tv_content)
     TextView tvContent;
-    @Bind(R.id.imageView)
+    @BindView(R.id.imageView)
     ImageView imageView;
+    @BindView(R.id.activity_scan_result)
+    LinearLayout activityScanResult;
     private int requestCode = 1;
 
     @Override
@@ -27,7 +31,6 @@ public class ScanResultActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_result);
         ButterKnife.bind(this);
-
         startActivityForResult(new Intent(ScanResultActivity.this, CaptureActivity.class), requestCode);
     }
 

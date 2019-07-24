@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -50,7 +50,6 @@ public class HotGridViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         ViewHolder holder = null;
         if (convertView == null) {
             convertView = View.inflate(mContext, R.layout.item_hot_grid_view, null);
@@ -74,11 +73,11 @@ public class HotGridViewAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        @Bind(R.id.iv_hot)
+        @BindView(R.id.iv_hot)
         ImageView ivHot;
-        @Bind(R.id.tv_name)
+        @BindView(R.id.tv_name)
         TextView tvName;
-        @Bind(R.id.tv_price)
+        @BindView(R.id.tv_price)
         TextView tvPrice;
 
         ViewHolder(View view) {

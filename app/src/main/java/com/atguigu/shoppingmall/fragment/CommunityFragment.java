@@ -10,7 +10,7 @@ import com.atguigu.shoppingmall.adapter.CommunityViewPagerAdapter;
 import com.atguigu.shoppingmall.base.BaseFragment;
 import com.viewpagerindicator.TabPageIndicator;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -22,28 +22,25 @@ import butterknife.OnClick;
 
 public class CommunityFragment extends BaseFragment {
 
-    @Bind(R.id.ib_community_icon)
+    @BindView(R.id.ib_community_icon)
     ImageButton ibCommunityIcon;
-    @Bind(R.id.pager_indicator)
+    @BindView(R.id.pager_indicator)
     TabPageIndicator pagerIndicator;
-    @Bind(R.id.ib_community_message)
+    @BindView(R.id.ib_community_message)
     ImageButton ibCommunityMessage;
-    @Bind(R.id.view_pager)
+    @BindView(R.id.view_pager)
     ViewPager viewPager;
     private CommunityViewPagerAdapter adapter;
 
     @Override
     public View initView() {
-
         Log.e("TAG", "发现面的UI被初始化了");
         View view = View.inflate(mContext, R.layout.fragment_community, null);
         ButterKnife.bind(this, view);
-
         adapter = new CommunityViewPagerAdapter(getFragmentManager());
         viewPager.setAdapter(adapter);
         pagerIndicator.setVisibility(View.VISIBLE);
         pagerIndicator.setViewPager(viewPager);
-
         return view;
     }
 
@@ -65,9 +62,4 @@ public class CommunityFragment extends BaseFragment {
         }
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
 }

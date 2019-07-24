@@ -9,13 +9,13 @@ import android.widget.ProgressBar;
 
 import com.atguigu.shoppingmall.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.jpush.android.api.JPushInterface;
 
 public class WelcomeActivity extends Activity {
 
-    @Bind(R.id.progressbar)
+    @BindView(R.id.progressbar)
     ProgressBar progressbar;
 
     //该程序模拟天成长度为100的数组

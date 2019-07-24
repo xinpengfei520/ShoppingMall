@@ -19,7 +19,7 @@ import com.atguigu.shoppingmall.R;
 
 import java.util.HashMap;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.sharesdk.framework.Platform;
@@ -33,25 +33,25 @@ import static android.R.attr.action;
 // 登录页面
 public class LoginActivity extends Activity {
 
-    @Bind(R.id.ib_login_back)
+    @BindView(R.id.ib_login_back)
     ImageButton ibLoginBack;
-    @Bind(R.id.et_login_phone)
+    @BindView(R.id.et_login_phone)
     EditText etLoginPhone;
-    @Bind(R.id.et_login_pwd)
+    @BindView(R.id.et_login_pwd)
     EditText etLoginPwd;
-    @Bind(R.id.btn_login)
+    @BindView(R.id.btn_login)
     Button btnLogin;
-    @Bind(R.id.tv_login_register)
+    @BindView(R.id.tv_login_register)
     TextView tvLoginRegister;
-    @Bind(R.id.tv_login_forget_pwd)
+    @BindView(R.id.tv_login_forget_pwd)
     TextView tvLoginForgetPwd;
-    @Bind(R.id.ib_weibo)
+    @BindView(R.id.ib_weibo)
     ImageButton ibWeibo;
-    @Bind(R.id.ib_qq)
+    @BindView(R.id.ib_qq)
     ImageButton ibQq;
-    @Bind(R.id.ib_wechat)
+    @BindView(R.id.ib_wechat)
     ImageButton ibWechat;
-    @Bind(R.id.tv_rules)
+    @BindView(R.id.tv_rules)
     TextView tvRules;
 
     private String screen_name;

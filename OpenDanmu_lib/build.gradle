@@ -6,12 +6,10 @@ apply plugin: "com.jfrog.bintray"*/
 version = "1.0.0"
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
-
+    compileSdkVersion rootProject.compileSdkVersion
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 24
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
     }
@@ -32,8 +30,8 @@ tasks.withType(JavaCompile) {
 }*/
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
 }
 
 /*def siteUrl = 'https://github.com/linsea/OpenDanmaku'      // Homepage URL of the library

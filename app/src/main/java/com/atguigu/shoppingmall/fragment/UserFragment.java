@@ -19,7 +19,7 @@ import com.atguigu.shoppingmall.view.MyScrollView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -33,56 +33,54 @@ import static android.app.Activity.RESULT_OK;
 
 public class UserFragment extends BaseFragment {
 
-    @Bind(R.id.ib_user_icon_avator)
+    @BindView(R.id.ib_user_icon_avator)
     ImageButton ibUserIconAvator;
-    @Bind(R.id.tv_username)
+    @BindView(R.id.tv_username)
     TextView tvUsername;
-    @Bind(R.id.tv_all_order)
+    @BindView(R.id.tv_all_order)
     TextView tvAllOrder;
-    @Bind(R.id.tv_user_pay)
+    @BindView(R.id.tv_user_pay)
     TextView tvUserPay;
-    @Bind(R.id.tv_user_receive)
+    @BindView(R.id.tv_user_receive)
     TextView tvUserReceive;
-    @Bind(R.id.tv_user_finish)
+    @BindView(R.id.tv_user_finish)
     TextView tvUserFinish;
-    @Bind(R.id.tv_user_drawback)
+    @BindView(R.id.tv_user_drawback)
     TextView tvUserDrawback;
-    @Bind(R.id.tv_user_location)
+    @BindView(R.id.tv_user_location)
     TextView tvUserLocation;
-    @Bind(R.id.tv_user_collect)
+    @BindView(R.id.tv_user_collect)
     TextView tvUserCollect;
-    @Bind(R.id.tv_user_coupon)
+    @BindView(R.id.tv_user_coupon)
     TextView tvUserCoupon;
-    @Bind(R.id.tv_user_score)
+    @BindView(R.id.tv_user_score)
     TextView tvUserScore;
-    @Bind(R.id.tv_user_prize)
+    @BindView(R.id.tv_user_prize)
     TextView tvUserPrize;
-    @Bind(R.id.tv_user_ticket)
+    @BindView(R.id.tv_user_ticket)
     TextView tvUserTicket;
-    @Bind(R.id.tv_user_invitation)
+    @BindView(R.id.tv_user_invitation)
     TextView tvUserInvitation;
-    @Bind(R.id.tv_user_callcenter)
+    @BindView(R.id.tv_user_callcenter)
     TextView tvUserCallcenter;
-    @Bind(R.id.tv_user_feedback)
+    @BindView(R.id.tv_user_feedback)
     TextView tvUserFeedback;
-    @Bind(R.id.scrollview)
+    @BindView(R.id.scrollview)
     MyScrollView scrollview;
-    @Bind(R.id.tv_usercenter)
+    @BindView(R.id.tv_usercenter)
     TextView tvUsercenter;
-    @Bind(R.id.ib_user_setting)
+    @BindView(R.id.ib_user_setting)
     ImageButton ibUserSetting;
-    @Bind(R.id.ib_user_message)
+    @BindView(R.id.ib_user_message)
     ImageButton ibUserMessage;
     private int requestCode = 1;
 
     @Override
     public View initView() {
-
         Log.e("TAG", "用户面的UI被初始化了");
         View view = View.inflate(mContext, R.layout.fragment_user, null);
         ButterKnife.bind(this, view);
         tvUsercenter.setAlpha(0);
-
         return view;
     }
 
@@ -169,7 +167,6 @@ public class UserFragment extends BaseFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
 }

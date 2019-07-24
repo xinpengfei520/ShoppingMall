@@ -17,7 +17,7 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -29,11 +29,11 @@ import butterknife.OnClick;
 
 public class TypeFragment extends BaseFragment {
 
-    @Bind(R.id.segTabLayout)
+    @BindView(R.id.segTabLayout)
     SegmentTabLayout segTabLayout;
-    @Bind(R.id.iv_type_search)
+    @BindView(R.id.iv_type_search)
     ImageView ivTypeSearch;
-    @Bind(R.id.fl_type)
+    @BindView(R.id.fl_type)
     FrameLayout flType;
     private List<BaseFragment> fragmentList;
     private Fragment fragment;
@@ -135,9 +135,4 @@ public class TypeFragment extends BaseFragment {
         }
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
 }
