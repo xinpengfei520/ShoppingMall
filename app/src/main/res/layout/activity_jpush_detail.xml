@@ -4,7 +4,7 @@
     android:id="@+id/activity_jpush_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.atguigu.shoppingmall.activity.JPushDetailActivity">
+    tools:context="com.xpf.shoppingmall.activity.JPushDetailActivity">
 
     <WebView
         android:id="@+id/webView"

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context=".fragment.UserFragment">
 
-    <com.atguigu.shoppingmall.view.MyScrollView
+    <com.xpf.shoppingmall.view.MyScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -334,7 +334,7 @@
                 android:background="#eee" />
         </LinearLayout>
 
-    </com.atguigu.shoppingmall.view.MyScrollView>
+    </com.xpf.shoppingmall.view.MyScrollView>
 
     <TextView
         android:id="@+id/tv_usercenter"

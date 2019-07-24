@@ -12,7 +12,7 @@ android {
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion rootProject.compileSdkVersion
     defaultConfig {
-        applicationId "com.atguigu.shoppingmall"
+        applicationId "com.xpf.shoppingmall"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1

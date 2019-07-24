@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.atguigu.shoppingmall.activity.GoodsInfoActivity">
+    tools:context="com.xpf.shoppingmall.activity.GoodsInfoActivity">
 
     <!--标题栏-->
     <LinearLayout
@@ -49,7 +49,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.atguigu.shoppingmall.view.ScrollViewContainer
+            <com.xpf.shoppingmall.view.ScrollViewContainer
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -190,7 +190,7 @@
 
                 </ScrollView>
 
-            </com.atguigu.shoppingmall.view.ScrollViewContainer>
+            </com.xpf.shoppingmall.view.ScrollViewContainer>
 
         </LinearLayout>
 

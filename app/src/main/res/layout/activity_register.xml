@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#11000000"
     android:orientation="vertical"
-    tools:context="com.atguigu.shoppingmall.activity.RegisterActivity">
+    tools:context="com.xpf.shoppingmall.activity.RegisterActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

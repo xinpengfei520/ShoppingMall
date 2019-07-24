@@ -57,7 +57,7 @@
                     android:textColor="#f00"
                     android:textSize="14sp" />
 
-                <com.atguigu.shoppingmall.view.AddSubView
+                <com.xpf.shoppingmall.view.AddSubView
                     android:id="@+id/ddSubView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

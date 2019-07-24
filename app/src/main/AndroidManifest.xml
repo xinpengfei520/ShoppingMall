@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.atguigu.shoppingmall">
+    package="com.xpf.shoppingmall">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -64,7 +64,7 @@
 
     <!-- JPush start  一些系统要求的权限，如访问网络等 -->
     <permission
-        android:name="com.atguigu.shoppingmall.permission.JPUSH_MESSAGE"
+        android:name="com.xpf.shoppingmall.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.atguigu.shoppingmall.permission.JPUSH_MESSAGE" />
@@ -90,7 +90,7 @@
     <!-- JPush end -->
 
     <application
-        android:name=".MyApplication"
+        android:name="com.xpf.shoppingmall.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -98,7 +98,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.WelcomeActivity"
+            android:name="com.xpf.shoppingmall.activity.WelcomeActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -107,36 +107,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.xpf.shoppingmall.activity.MainActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".activity.GoodsInfoActivity"
+            android:name="com.xpf.shoppingmall.activity.GoodsInfoActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".activity.SearchActivity"
+            android:name="com.xpf.shoppingmall.activity.SearchActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".activity.ScanResultActivity"
+            android:name="com.xpf.shoppingmall.activity.ScanResultActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name="com.xpf.shoppingmall.activity.LoginActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".activity.RulesActivity"
+            android:name="com.xpf.shoppingmall.activity.RulesActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".activity.MyOrderActivity"
+            android:name="com.xpf.shoppingmall.activity.MyOrderActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".activity.MessageCenterActivity"
+            android:name="com.xpf.shoppingmall.activity.MessageCenterActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".activity.SettingActivity"
+            android:name="com.xpf.shoppingmall.activity.SettingActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name="com.xpf.shoppingmall.activity.RegisterActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
-        <activity android:name=".activity.JPushDetailActivity" />
+        <activity android:name="com.xpf.shoppingmall.activity.JPushDetailActivity" />
 
         <!-- alipay sdk begin -->
         <activity
@@ -173,7 +173,7 @@
 
         <!-- 微信分享回调 -->
         <activity
-            android:name=".wxapi.WXEntryActivity"
+            android:name="com.xpf.shoppingmall.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -263,7 +263,7 @@
 
         <!-- User defined.  For test only  用户自定义的广播接收器 -->
         <receiver
-            android:name=".receiver.MyReceiver"
+            android:name="com.xpf.shoppingmall.receiver.MyReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>

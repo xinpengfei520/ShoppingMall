@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/welcome_bg"
-    tools:context="com.atguigu.shoppingmall.activity.WelcomeActivity">
+    tools:context="com.xpf.shoppingmall.activity.WelcomeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
