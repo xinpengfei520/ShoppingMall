@@ -18,12 +18,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.xpf.shoppingmall.R;
 import com.xpf.shoppingmall.activity.GoodsInfoActivity;
 import com.xpf.shoppingmall.domain.GoodsBean;
 import com.xpf.shoppingmall.domain.ResultBeanData;
-import com.xpf.shoppingmall.utils.Constants;
-import com.bumptech.glide.Glide;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -336,7 +335,7 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                     ImageView imageView = new ImageView(mContext);
                     imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
-                    Glide.with(mContext).load(Constants.BASE_URL_IMAGE + act_info.get(position).getIcon_url()).into(imageView);
+                    Glide.with(mContext).load(act_info.get(position).getIcon_url()).into(imageView);
                     // 添加到容器里面
                     container.addView(imageView);
 
@@ -421,7 +420,7 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 @Override
                 public void displayImage(Context context, Object path, ImageView imageView) {
                     // 联网请求图片
-                    Glide.with(mContext).load(Constants.BASE_URL_IMAGE + path).into(imageView);
+                    Glide.with(mContext).load(path).into(imageView);
                 }
             });
 

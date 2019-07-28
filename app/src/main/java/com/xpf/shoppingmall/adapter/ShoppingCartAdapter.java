@@ -9,12 +9,11 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.xpf.shoppingmall.R;
 import com.xpf.shoppingmall.domain.GoodsBean;
 import com.xpf.shoppingmall.utils.CartStorage;
-import com.xpf.shoppingmall.utils.Constants;
 import com.xpf.shoppingmall.view.AddSubView;
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -200,27 +199,24 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
         final GoodsBean goodsBean = datas.get(position);
         // 2.设置数据
         holder.cbGov.setChecked(goodsBean.isSelected());
-        Glide.with(mContext).load(Constants.BASE_URL_IMAGE + goodsBean.getFigure()).into(holder.ivGov);
+        Glide.with(mContext).load(goodsBean.getFigure()).into(holder.ivGov);
         holder.tvDescGov.setText(goodsBean.getName());
         holder.tvPriceGov.setText("￥" + goodsBean.getCover_price());
         holder.ddSubView.setCurrentValue(goodsBean.getNumber());
         holder.ddSubView.setMinValue(1);
         holder.ddSubView.setMaxValue(15);
 
-        holder.ddSubView.setOnAddSubClickListener(new AddSubView.OnAddSubClickListener() {
-            @Override
-            public void onNumberChange(int value) {
-                // 1.内存中
-                goodsBean.setNumber(value);
-                // 2.本地
-                CartStorage.getInstance().updateData(goodsBean);
-                // 3.刷新适配器
-                notifyItemChanged(position);
-                // 4.再次计算总价格
-                showTotalPrice();
-                showTotalCount();
-                showDeleteTotalCount();
-            }
+        holder.ddSubView.setOnAddSubClickListener(value -> {
+            // 1.内存中
+            goodsBean.setNumber(value);
+            // 2.本地
+            CartStorage.getInstance().updateData(goodsBean);
+            // 3.刷新适配器
+            notifyItemChanged(position);
+            // 4.再次计算总价格
+            showTotalPrice();
+            showTotalCount();
+            showDeleteTotalCount();
         });
     }
 

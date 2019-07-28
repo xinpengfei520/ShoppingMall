@@ -13,14 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.xpf.shoppingmall.R;
-import com.xpf.shoppingmall.domain.HotPostBean;
-import com.xpf.shoppingmall.utils.BitmapUtils;
-import com.xpf.shoppingmall.utils.Constants;
-import com.xpf.shoppingmall.utils.DensityUtil;
 import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
+import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.domain.HotPostBean;
+import com.xpf.shoppingmall.utils.BitmapUtils;
+import com.xpf.shoppingmall.utils.DensityUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -77,7 +76,7 @@ public class HotPostListViewAdapter extends BaseAdapter {
         SimpleDateFormat mydate = new SimpleDateFormat("MM-dd HH:mm");
         holder.tvHotAddtime.setText(mydate.format(Integer.parseInt(resultBean.getAdd_time())));
         Glide.with(mContext)
-                .load(Constants.Base_URL_IMAGE + resultBean.getFigure())
+                .load(resultBean.getFigure())
                 .into(holder.ivHotFigure);
         holder.tvHotSaying.setText(resultBean.getSaying());
         holder.tvHotLikes.setText(resultBean.getLikes());

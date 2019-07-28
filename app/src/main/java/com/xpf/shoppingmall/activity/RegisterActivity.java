@@ -52,11 +52,12 @@ public class RegisterActivity extends Activity {
             case R.id.iv_back:
                 finish();
                 break;
-
             case R.id.send_code:
                 break;
             case R.id.btn_register:
                 toRegister();
+                break;
+            default:
                 break;
         }
     }

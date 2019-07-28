@@ -10,16 +10,15 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.xpf.shoppingmall.R;
-import com.xpf.shoppingmall.domain.NewPostBean;
-import com.xpf.shoppingmall.utils.BitmapUtils;
-import com.xpf.shoppingmall.utils.Constants;
 import com.bumptech.glide.Glide;
 import com.opendanmaku.DanmakuItem;
 import com.opendanmaku.DanmakuView;
 import com.opendanmaku.IDanmakuItem;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
+import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.domain.NewPostBean;
+import com.xpf.shoppingmall.utils.BitmapUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -76,7 +75,7 @@ public class NewPostListViewAdapter extends BaseAdapter {
         holder.tvCommunityUsername.setText(resultBean.getUsername());
 //        holder.tvCommunityAddtime.setText(resultBean.getAdd_time());
         Glide.with(mContext)
-                .load(Constants.Base_URL_IMAGE + resultBean.getFigure())
+                .load(resultBean.getFigure())
                 .into(holder.ivCommunityFigure);
 
         holder.tvCommunitySaying.setText(resultBean.getSaying());

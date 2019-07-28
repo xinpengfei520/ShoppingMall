@@ -14,13 +14,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.xpf.shoppingmall.R;
 import com.xpf.shoppingmall.activity.GoodsInfoActivity;
 import com.xpf.shoppingmall.domain.GoodsBean;
 import com.xpf.shoppingmall.domain.TypeBean;
-import com.xpf.shoppingmall.utils.Constants;
 import com.xpf.shoppingmall.utils.DensityUtil;
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -104,15 +103,10 @@ public class TypeRightAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         public void setData(TypeBean.ResultBean.ChildBean childBean, final int position) {
             Glide.with(mContext)
-                    .load(Constants.BASE_URL_IMAGE + childBean.getPic())
+                    .load(childBean.getPic())
                     .into(iv_ordinary_right);
             tv_ordinary_right.setText(childBean.getName());
-            ll_root.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(mContext, "position===" + position, Toast.LENGTH_SHORT).show();
-                }
-            });
+            ll_root.setOnClickListener(v -> Toast.makeText(mContext, "position===" + position, Toast.LENGTH_SHORT).show());
         }
     }
 
@@ -144,7 +138,7 @@ public class TypeRightAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 ImageView imageView = new ImageView(mContext);
 
                 Glide.with(mContext)
-                        .load(Constants.BASE_URL_IMAGE + hot_product_list.get(i).getFigure())
+                        .load(hot_product_list.get(i).getFigure())
                         .into(imageView);
                 lp.setMargins(0, 0, 0, DensityUtil.dip2px(mContext, 10));
                 myLinear.addView(imageView, lp);

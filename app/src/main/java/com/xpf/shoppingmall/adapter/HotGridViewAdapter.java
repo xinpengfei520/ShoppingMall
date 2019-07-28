@@ -7,10 +7,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.xpf.shoppingmall.R;
 import com.xpf.shoppingmall.domain.ResultBeanData;
-import com.xpf.shoppingmall.utils.Constants;
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -65,7 +64,7 @@ public class HotGridViewAdapter extends BaseAdapter {
         // 得到对应位置的数据
         ResultBeanData.ResultBean.HotInfoBean hotInfoBean = datas.get(position);
 
-        Glide.with(mContext).load(Constants.BASE_URL_IMAGE + hotInfoBean.getFigure()).into(holder.ivHot);
+        Glide.with(mContext).load(hotInfoBean.getFigure()).into(holder.ivHot);
         holder.tvName.setText(hotInfoBean.getName());
         holder.tvPrice.setText("￥" + hotInfoBean.getCover_price());
 

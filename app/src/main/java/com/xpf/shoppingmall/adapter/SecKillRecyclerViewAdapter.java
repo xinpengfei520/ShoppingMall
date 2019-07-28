@@ -7,10 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.xpf.shoppingmall.R;
 import com.xpf.shoppingmall.domain.ResultBeanData;
-import com.xpf.shoppingmall.utils.Constants;
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -43,7 +42,7 @@ public class SecKillRecyclerViewAdapter extends RecyclerView.Adapter<SecKillRecy
         ResultBeanData.ResultBean.SeckillInfoBean.ListBean listBean = list.get(position);
 
         // 2.绑定数据
-        Glide.with(mContext).load(Constants.BASE_URL_IMAGE + listBean.getFigure()).into(holder.iv_figure);
+        Glide.with(mContext).load(listBean.getFigure()).into(holder.iv_figure);
         holder.tv_cover_price.setText(listBean.getCover_price());
         holder.tv_origin_price.setText(listBean.getOrigin_price());
     }
@@ -70,7 +69,7 @@ public class SecKillRecyclerViewAdapter extends RecyclerView.Adapter<SecKillRecy
                 @Override
                 public void onClick(View v) {
 //                    Toast.makeText(mContext, "秒杀===" + getLayoutPosition(), Toast.LENGTH_SHORT).show();
-                    if(onSeckillRecyclerView != null) {
+                    if (onSeckillRecyclerView != null) {
                         onSeckillRecyclerView.onItemClick(getLayoutPosition());
                     }
                 }

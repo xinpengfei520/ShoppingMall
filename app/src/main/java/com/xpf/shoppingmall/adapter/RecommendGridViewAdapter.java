@@ -7,10 +7,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.xpf.shoppingmall.R;
 import com.xpf.shoppingmall.domain.ResultBeanData;
-import com.xpf.shoppingmall.utils.Constants;
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -66,7 +65,7 @@ public class RecommendGridViewAdapter extends BaseAdapter {
         // 根据位置得到对应的数据
         ResultBeanData.ResultBean.RecommendInfoBean recommendInfoBean = datas.get(position);
 
-        Glide.with(mContext).load(Constants.BASE_URL_IMAGE + recommendInfoBean.getFigure()).into(holder.ivRecommend);
+        Glide.with(mContext).load(recommendInfoBean.getFigure()).into(holder.ivRecommend);
         holder.tvName.setText(recommendInfoBean.getName());
         holder.tvPrice.setText("￥" + recommendInfoBean.getCover_price());
 

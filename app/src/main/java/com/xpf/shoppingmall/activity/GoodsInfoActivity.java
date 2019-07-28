@@ -21,11 +21,10 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.xpf.shoppingmall.R;
 import com.xpf.shoppingmall.domain.GoodsBean;
 import com.xpf.shoppingmall.utils.CartStorage;
-import com.xpf.shoppingmall.utils.Constants;
-import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -102,7 +101,7 @@ public class GoodsInfoActivity extends Activity implements View.OnClickListener 
     private void setGoodsDetailsView(GoodsBean goodsBean) {
 
         // 设置商品的图片
-        Glide.with(this).load(Constants.BASE_URL_IMAGE + goodsBean.getFigure()).into(ivGoodInfoImage);
+        Glide.with(this).load(goodsBean.getFigure()).into(ivGoodInfoImage);
 
         // 设置商品的价格
         tvGoodInfoPrice.setText("￥" + goodsBean.getCover_price());
@@ -224,7 +223,7 @@ public class GoodsInfoActivity extends Activity implements View.OnClickListener 
             translateAnimation.setDuration(500);
 
             // 设置商品的图片
-            Glide.with(this).load(Constants.BASE_URL_IMAGE + goodsBean.getFigure()).into((ImageView) pwStyleView.findViewById(R.id.iv_goods_cover));
+            Glide.with(this).load(goodsBean.getFigure()).into((ImageView) pwStyleView.findViewById(R.id.iv_goods_cover));
 
             // 设置商品的价格
             TextView tv_goods_price = (TextView) pwStyleView.findViewById(R.id.tv_goods_price);
