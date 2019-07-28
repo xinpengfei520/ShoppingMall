@@ -16,6 +16,9 @@
     <color name="round_red_common">#DC143C</color>
     <color name="my_title_bg">#28baed</color>
     <color name="white">#ffffff</color>
+    <color name="fefefe">#fefefe</color>
+    <color name="bdbdbd">#bdbdbd</color>
+    <color name="a3a3a3">#a3a3a3</color>
 
     <color name="page_back">#fff2f2f2</color>
     <color name="logo_text_color">#ff7f7f7f</color>
