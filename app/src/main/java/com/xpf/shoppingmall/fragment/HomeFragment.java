@@ -1,14 +1,15 @@
 package com.xpf.shoppingmall.fragment;
 
+import android.Manifest;
 import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.xpf.shoppingmall.R;
 import com.xpf.shoppingmall.activity.ScanResultActivity;
 import com.xpf.shoppingmall.activity.SearchActivity;
@@ -16,12 +17,15 @@ import com.xpf.shoppingmall.adapter.HomeFragmentAdapter;
 import com.xpf.shoppingmall.base.BaseFragment;
 import com.xpf.shoppingmall.domain.ResultBeanData;
 import com.xpf.shoppingmall.utils.Constants;
+import com.xpf.shoppingmall.utils.LogUtils;
+import com.xsir.pgyerappupdate.library.utils.ToastUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.disposables.Disposable;
 import okhttp3.Call;
 
 import static com.xpf.shoppingmall.R.id.ib_top;
@@ -46,10 +50,11 @@ public class HomeFragment extends BaseFragment {
     ImageButton ibTop;
     private ResultBeanData.ResultBean resultBean;
     private HomeFragmentAdapter adapter;
+    private static final String TAG = "HomeFragment";
 
     @Override
     public View initView() {
-        Log.e("TAG", "主页面的UI被初始化了");
+        LogUtils.e(TAG, "主页面的UI被初始化了");
         View view = View.inflate(mContext, R.layout.fragment_home, null);
         ButterKnife.bind(this, view);
         return view;
@@ -58,11 +63,10 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-        Log.e("TAG", "主页面的数据被初始化了");
+        LogUtils.e(TAG, "主页面的数据被初始化了");
         getDataFromNet();
     }
 
-    // 连网请求数据
     private void getDataFromNet() {
         String url = Constants.HOME_URL;
         OkHttpUtils
@@ -74,13 +78,13 @@ public class HomeFragment extends BaseFragment {
                     // 当联网失败的时候的回调
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        Log.e("TAG", "连网请求失败===" + e.toString());
+                        LogUtils.e(TAG, "连网请求失败===" + e.toString());
                     }
 
                     // 当连网成功的时候的回调
                     @Override
                     public void onResponse(String response, int id) {
-//                        Log.e("TAG", "连网请求成功===" + response);
+                        LogUtils.e(TAG, "连网请求成功===" + response);
                         processData(response);
                     }
 
@@ -90,9 +94,10 @@ public class HomeFragment extends BaseFragment {
     private void processData(String json) {
         ResultBeanData resultBeanData = JSON.parseObject(json, ResultBeanData.class);
         resultBean = resultBeanData.getResult();
-        Log.e("TAG", "解析成功了===" + resultBean.getHot_info().get(0).getName());
+        LogUtils.e(TAG, "解析成功了===" + resultBean.getHot_info().get(0).getName());
 
-        if (resultBean != null) { // 有数据
+        // 有数据
+        if (resultBean != null) {
             adapter = new HomeFragmentAdapter(mContext, resultBean);
             rvHome.setAdapter(adapter);
 
@@ -110,10 +115,13 @@ public class HomeFragment extends BaseFragment {
                     return 1; // 只能返回1
                 }
             });
-            rvHome.setLayoutManager(manager); // 设置布局管理者
 
-        } else { // 没有数据
+            // 设置布局管理者
+            rvHome.setLayoutManager(manager);
 
+            // 没有数据
+        } else {
+            ToastUtils.showShort(mContext, "数据为空！");
         }
     }
 
@@ -128,13 +136,32 @@ public class HomeFragment extends BaseFragment {
                 break;
             case R.id.rv_home:
                 break;
+            // 回到顶部
             case ib_top:
-                rvHome.scrollToPosition(0); // 回到顶部
+                rvHome.scrollToPosition(0);
                 break;
             case R.id.tv_scan:
-                startActivity(new Intent(mContext, ScanResultActivity.class));
+                startScanQrCode();
+                break;
+            default:
                 break;
         }
+    }
+
+    private void startScanQrCode() {
+        RxPermissions rxPermissions = new RxPermissions(this);
+        Disposable disposable =
+                rxPermissions
+                        .request(Manifest.permission.CAMERA)
+                        .subscribe(aBoolean -> {
+                            if (aBoolean) {
+                                startActivity(new Intent(mContext, ScanResultActivity.class));
+                            } else {
+                                ToastUtils.showShort(mContext, "您拒绝了权限！");
+                            }
+                        });
+
+        mCompositeDisposable.add(disposable);
     }
 
 }

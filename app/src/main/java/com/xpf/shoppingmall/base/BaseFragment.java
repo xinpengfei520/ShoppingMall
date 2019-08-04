@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 /**
  * Created by xpf on 2016/11/21 :)
  * Wechat:18091383534
@@ -17,6 +19,7 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends Fragment {
 
     protected Context mContext;
+    protected CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,4 +47,11 @@ public abstract class BaseFragment extends Fragment {
 
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mCompositeDisposable != null) {
+            mCompositeDisposable.clear();
+        }
+    }
 }
