@@ -84,10 +84,9 @@ public class HomeFragment extends BaseFragment {
                     // 当连网成功的时候的回调
                     @Override
                     public void onResponse(String response, int id) {
-                        LogUtils.e(TAG, "连网请求成功===" + response);
+                        LogUtils.iLogging(TAG, "连网请求成功===" + response);
                         processData(response);
                     }
-
                 });
     }
 

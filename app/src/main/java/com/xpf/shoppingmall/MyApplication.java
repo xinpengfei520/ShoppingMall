@@ -5,6 +5,8 @@ import android.content.Context;
 
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.zhy.http.okhttp.OkHttpUtils;
 
@@ -49,6 +51,17 @@ public class MyApplication extends Application {
         ShareSDK.initSDK(this);
 
         CrashReport.initCrashReport(getApplicationContext(), "a49bb24dcd", BuildConfig.DEBUG);
+
+        initLogger();
+    }
+
+    private void initLogger() {
+        Logger.addLogAdapter(new AndroidLogAdapter() {
+            @Override
+            public boolean isLoggable(int priority, String tag) {
+                return BuildConfig.DEBUG;
+            }
+        });
     }
 
     private void initOkhttpClient() {

@@ -1,5 +1,6 @@
 package com.xpf.shoppingmall.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
@@ -12,7 +13,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +26,6 @@ import com.xpf.shoppingmall.domain.ResultBeanData;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
-import com.youth.banner.listener.OnBannerClickListener;
 import com.youth.banner.loader.ImageLoader;
 import com.zhy.magicviewpager.transformer.ScaleInTransformer;
 
@@ -43,18 +42,42 @@ import java.util.List;
 
 public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public static final int BANNER = 0;   // 广告类型
-    public static final int CHANNEL = 1;  // 频道类型
-    public static final int ACT = 2;      // 活动类型
-    public static final int SECKILL = 3;  // 秒杀类型
-    public static final int RECOMMEND = 4;// 推荐类型
-    public static final int HOT = 5;      // 热卖类型
+    /**
+     * // 广告类型
+     */
+    private static final int BANNER = 0;
+    /**
+     * // 频道类型
+     */
+    private static final int CHANNEL = 1;
+    /**
+     * // 活动类型
+     */
+    private static final int ACT = 2;
+    /**
+     * // 秒杀类型
+     */
+    private static final int SECKILL = 3;
+    /**
+     * // 推荐类型
+     */
+    private static final int RECOMMEND = 4;
+    /**
+     * // 热卖类型
+     */
+    private static final int HOT = 5;
     private static final String GOODS_BEAN = "goods_bean";
     private Context mContext;
     private ResultBeanData.ResultBean resultBean;
-    private int currentType = 0; // 默认为0
-    private LayoutInflater mLayoutInflater; // 初始化布局加载器
-    private long dt = 0; // 相差多少时间(毫秒)
+    /**
+     * // 默认为0
+     */
+    private int currentType = 0;
+    private LayoutInflater mLayoutInflater;
+    /**
+     * // 相差多少时间(毫秒)
+     */
+    private long dt = 0;
 
     public HomeFragmentAdapter(Context mContext, ResultBeanData.ResultBean resultBean) {
         this.mContext = mContext;
@@ -111,11 +134,8 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-
-    // 得到类型
     @Override
     public int getItemViewType(int position) {
-
         switch (position) {
             case BANNER:
                 currentType = BANNER;
@@ -139,14 +159,16 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         return currentType;
     }
 
-    // 总共有多少条item 0-->6
+    /**
+     * 总共有多少条 item 0-->6
+     */
     @Override
     public int getItemCount() {
         return 6;
     }
 
     /**
-     * 热卖商品的ViewHolder
+     * 热卖商品的 ViewHolder
      */
     class HotViewHolder extends RecyclerView.ViewHolder {
 
@@ -169,25 +191,23 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             gv_hot.setAdapter(adapter);
 
             // 设置热卖item的点击事件
-            gv_hot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                    Toast.makeText(mContext, "position===0" + position, Toast.LENGTH_SHORT).show();
-                    // 热卖商品的bean类
-                    ResultBeanData.ResultBean.HotInfoBean hotInfoBean = hot_info.get(position);
-                    // 商品的bean类
-                    GoodsBean goodsBean = new GoodsBean();
-                    goodsBean.setName(hotInfoBean.getName());
-                    goodsBean.setCover_price(hotInfoBean.getCover_price());
-                    goodsBean.setFigure(hotInfoBean.getFigure());
-                    goodsBean.setProduct_id(hotInfoBean.getProduct_id());
-                    startGoodsInfoActivity(goodsBean);
-                }
+            gv_hot.setOnItemClickListener((parent, view, position, id) -> {
+                // 热卖商品的bean类
+                ResultBeanData.ResultBean.HotInfoBean hotInfoBean = hot_info.get(position);
+                // 商品的bean类
+                GoodsBean goodsBean = new GoodsBean();
+                goodsBean.setName(hotInfoBean.getName());
+                goodsBean.setCover_price(hotInfoBean.getCover_price());
+                goodsBean.setFigure(hotInfoBean.getFigure());
+                goodsBean.setProduct_id(hotInfoBean.getProduct_id());
+                startGoodsInfoActivity(goodsBean);
             });
         }
     }
 
-    // 携带数据到商品详情页面
+    /**
+     * 携带数据到商品详情页面
+     */
     public void startGoodsInfoActivity(GoodsBean goodsBean) {
         Intent intent = new Intent(mContext, GoodsInfoActivity.class);
         intent.putExtra(GOODS_BEAN, goodsBean);
@@ -195,7 +215,7 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     /**
-     * 推荐内容的ViewHolder
+     * 推荐内容的 ViewHolder
      */
     class RecommendViewHolder extends RecyclerView.ViewHolder {
 
@@ -218,25 +238,20 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             adapter = new RecommendGridViewAdapter(mContext, recommend_info);
             gv_recommend.setAdapter(adapter);
 
-            gv_recommend.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                    Toast.makeText(mContext, "position===" + position, Toast.LENGTH_SHORT).show();
-                    ResultBeanData.ResultBean.RecommendInfoBean recommendInfoBean = recommend_info.get(position);
-
-                    GoodsBean goodsBean = new GoodsBean();
-                    goodsBean.setName(recommendInfoBean.getName());
-                    goodsBean.setCover_price(recommendInfoBean.getCover_price());
-                    goodsBean.setFigure(recommendInfoBean.getFigure());
-                    goodsBean.setProduct_id(recommendInfoBean.getProduct_id());
-                    startGoodsInfoActivity(goodsBean);
-                }
+            gv_recommend.setOnItemClickListener((parent, view, position, id) -> {
+                ResultBeanData.ResultBean.RecommendInfoBean recommendInfoBean = recommend_info.get(position);
+                GoodsBean goodsBean = new GoodsBean();
+                goodsBean.setName(recommendInfoBean.getName());
+                goodsBean.setCover_price(recommendInfoBean.getCover_price());
+                goodsBean.setFigure(recommendInfoBean.getFigure());
+                goodsBean.setProduct_id(recommendInfoBean.getProduct_id());
+                startGoodsInfoActivity(goodsBean);
             });
         }
     }
 
     /**
-     * 秒杀数据的ViewHolder
+     * 秒杀数据的 ViewHolder
      */
     class SecKillViewHolder extends RecyclerView.ViewHolder {
 
@@ -245,7 +260,9 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         private TextView tv_more_seckill;
         private RecyclerView rv_seckill;
         private SecKillRecyclerViewAdapter adapter;
+        @SuppressLint("HandlerLeak")
         private Handler handler = new Handler() {
+            @Override
             public void handleMessage(Message msg) {
                 dt -= 100;
                 SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss:S");
@@ -278,17 +295,14 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             rv_seckill.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
 
             // 设置item的点击事件
-            adapter.setOnSeckillRecyclerView(new SecKillRecyclerViewAdapter.OnSeckillRecyclerView() {
-                @Override
-                public void onItemClick(int position) {
-                    ResultBeanData.ResultBean.SeckillInfoBean.ListBean listBean = seckill_info.getList().get(position);
-                    GoodsBean goodsBean = new GoodsBean();
-                    goodsBean.setName(listBean.getName());
-                    goodsBean.setCover_price(listBean.getCover_price());
-                    goodsBean.setFigure(listBean.getFigure());
-                    goodsBean.setProduct_id(listBean.getProduct_id());
-                    startGoodsInfoActivity(goodsBean);
-                }
+            adapter.setOnSeckillRecyclerView(position -> {
+                ResultBeanData.ResultBean.SeckillInfoBean.ListBean listBean = seckill_info.getList().get(position);
+                GoodsBean goodsBean = new GoodsBean();
+                goodsBean.setName(listBean.getName());
+                goodsBean.setCover_price(listBean.getCover_price());
+                goodsBean.setFigure(listBean.getFigure());
+                goodsBean.setProduct_id(listBean.getProduct_id());
+                startGoodsInfoActivity(goodsBean);
             });
 
             // 设置秒杀倒计时
@@ -298,7 +312,9 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-    // 活动类型的ViewHolder
+    /**
+     * 活动类型的 ViewHolder
+     */
     class ActViewHolder extends RecyclerView.ViewHolder {
 
         private final Context mContext;
@@ -334,19 +350,11 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 public Object instantiateItem(ViewGroup container, final int position) {
                     ImageView imageView = new ImageView(mContext);
                     imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-
                     Glide.with(mContext).load(act_info.get(position).getIcon_url()).into(imageView);
                     // 添加到容器里面
                     container.addView(imageView);
-
                     // 设置点击事件
-                    imageView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Toast.makeText(mContext, "position===" + position, Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
+                    imageView.setOnClickListener(v -> Toast.makeText(mContext, "position===" + position, Toast.LENGTH_SHORT).show());
                     return imageView;
                 }
 
@@ -355,12 +363,11 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                     container.removeView((View) object);
                 }
             });
-
         }
     }
 
     /**
-     * 频道信息的ViewHolder
+     * 频道信息的 ViewHolder
      */
     class ChannelViewHolder extends RecyclerView.ViewHolder {
 
@@ -374,12 +381,7 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             gv_channel = (GridView) itemView.findViewById(R.id.gv_channel);
 
             // 设置item的点击事件
-            gv_channel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView parent, View view, int position, long id) {
-                    Toast.makeText(mContext, "position" + position, Toast.LENGTH_SHORT).show();
-                }
-            });
+            gv_channel.setOnItemClickListener((parent, view1, position, id) -> Toast.makeText(mContext, "position" + position, Toast.LENGTH_SHORT).show());
         }
 
         public void setData(List<ResultBeanData.ResultBean.ChannelInfoBean> channel_info) {
@@ -427,12 +429,7 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             banner.setImages(imageUrls);
 
             // 设置banner的点击事件
-            banner.setOnBannerClickListener(new OnBannerClickListener() {
-                @Override
-                public void OnBannerClick(int position) {
-                    mContext.startActivity(new Intent(mContext, GoodsInfoActivity.class));
-                }
-            });
+            banner.setOnBannerClickListener(position -> mContext.startActivity(new Intent(mContext, GoodsInfoActivity.class)));
 
             banner.start();
         }
