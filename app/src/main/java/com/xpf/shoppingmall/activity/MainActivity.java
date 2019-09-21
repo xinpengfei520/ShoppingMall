@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
@@ -14,6 +13,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.base.BaseActivity;
 import com.xpf.shoppingmall.base.BaseFragment;
 import com.xpf.shoppingmall.fragment.CommunityFragment;
 import com.xpf.shoppingmall.fragment.HomeFragment;
@@ -28,7 +28,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends BaseActivity {
 
     private static final int MESSAGE_BACK = 1;
     @BindView(R.id.frameLayout)

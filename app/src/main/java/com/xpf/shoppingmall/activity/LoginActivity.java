@@ -1,6 +1,5 @@
 package com.xpf.shoppingmall.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.base.BaseActivity;
 
 import java.util.HashMap;
 
@@ -31,7 +31,7 @@ import cn.sharesdk.tencent.qzone.QZone;
 import static android.R.attr.action;
 
 // 登录页面
-public class LoginActivity extends Activity {
+public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.ib_login_back)
     ImageButton ibLoginBack;
@@ -62,10 +62,8 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
         initListener();
     }
-
 
     private void initListener() {
         etLoginPwd.addTextChangedListener(new TextWatcher() {

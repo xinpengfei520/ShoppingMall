@@ -1,6 +1,5 @@
 package com.xpf.shoppingmall.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,13 +10,14 @@ import android.widget.Toast;
 
 import com.xpf.shoppingmall.R;
 import com.xpf.shoppingmall.adapter.MyOrderRecyclerAdapter;
+import com.xpf.shoppingmall.base.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 // 订单页面
-public class MyOrderActivity extends Activity {
+public class MyOrderActivity extends BaseActivity {
 
     @BindView(R.id.iv_search)
     ImageView ivSearch;

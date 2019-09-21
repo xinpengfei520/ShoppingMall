@@ -1,6 +1,5 @@
 package com.xpf.shoppingmall.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,9 +12,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.xpf.shoppingmall.R;
-import com.xpf.shoppingmall.adapter.HistoryRecordAdapter;
-import com.xpf.shoppingmall.utils.JsonParser;
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
 import com.iflytek.cloud.RecognizerResult;
@@ -23,6 +19,10 @@ import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
+import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.adapter.HistoryRecordAdapter;
+import com.xpf.shoppingmall.base.BaseActivity;
+import com.xpf.shoppingmall.utils.JsonParser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public class SearchActivity extends Activity {
+public class SearchActivity extends BaseActivity {
 
     private EditText et_input;
     private ImageView iv_delete;
@@ -42,17 +42,14 @@ public class SearchActivity extends Activity {
     private HistoryRecordAdapter adapter;
     private List<String> datas = new ArrayList<>();
     private Context mContext;
-
     // 用HashMap存储讯飞语音听写的结果
     private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         mContext = this;
-
         et_input = (EditText) findViewById(R.id.et_input);
         iv_delete = (ImageView) findViewById(R.id.iv_delete);
         iv_voice = (ImageView) findViewById(R.id.iv_voice);

@@ -1,16 +1,16 @@
 package com.xpf.shoppingmall.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.base.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class RulesActivity extends Activity {
+public class RulesActivity extends BaseActivity {
 
     @BindView(R.id.tv_agreed)
     TextView tvAgreed;

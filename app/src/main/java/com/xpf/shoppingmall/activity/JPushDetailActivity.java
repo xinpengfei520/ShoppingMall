@@ -1,15 +1,15 @@
 package com.xpf.shoppingmall.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.base.BaseActivity;
 
 // 点击推送后进入的页面
-public class JPushDetailActivity extends Activity {
+public class JPushDetailActivity extends BaseActivity {
 
     private WebView webView;
 

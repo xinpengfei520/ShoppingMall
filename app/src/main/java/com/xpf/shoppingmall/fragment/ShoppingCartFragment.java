@@ -78,13 +78,10 @@ public class ShoppingCartFragment extends BaseFragment {
 
     @Override
     public View initView() {
-
         Log.e("TAG", "购物面的UI被初始化了");
         View view = View.inflate(mContext, R.layout.fragment_shopping_cart, null);
         ButterKnife.bind(this, view);
-
         initListener();
-
         return view;
     }
 

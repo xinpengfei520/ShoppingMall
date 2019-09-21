@@ -1,6 +1,5 @@
 package com.xpf.shoppingmall.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -13,6 +12,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.base.BaseActivity;
 import com.xpf.shoppingmall.domain.RegisterBean;
 import com.xpf.shoppingmall.utils.Constants;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -24,7 +24,7 @@ import butterknife.OnClick;
 import okhttp3.Call;
 
 // 注册账号页面
-public class RegisterActivity extends Activity {
+public class RegisterActivity extends BaseActivity {
 
     @BindView(R.id.iv_back)
     ImageView ivBack;

@@ -7,11 +7,11 @@
     <com.xpf.shoppingmall.view.MyScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -42,7 +42,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="60dp"
                     android:layout_alignParentBottom="true"
                     android:background="#22000000"
                     android:orientation="horizontal">
@@ -60,14 +60,14 @@
                             android:layout_height="wrap_content"
                             android:text="100"
                             android:textColor="#FDB506"
-                            android:textSize="25sp" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="金币"
                             android:textColor="#FDB506"
-                            android:textSize="25sp" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <View
@@ -88,14 +88,14 @@
                             android:layout_height="wrap_content"
                             android:text="520"
                             android:textColor="#FDB506"
-                            android:textSize="25sp" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="积分"
                             android:textColor="#FDB506"
-                            android:textSize="25sp" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <View
@@ -116,14 +116,14 @@
                             android:layout_height="wrap_content"
                             android:text="1314.00"
                             android:textColor="#FDB506"
-                            android:textSize="25sp" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="余额"
                             android:textColor="#FDB506"
-                            android:textSize="25sp" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -171,7 +171,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawablePadding="10dp"
+                    android:drawablePadding="4dp"
                     android:drawableTop="@drawable/new_order_status_fukuan"
                     android:gravity="center"
                     android:text="待付款"
@@ -181,7 +181,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawablePadding="10dp"
+                    android:drawablePadding="4dp"
                     android:drawableTop="@drawable/new_order_status_fahuo"
                     android:gravity="center"
                     android:text="待发货"
@@ -192,7 +192,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawablePadding="10dp"
+                    android:drawablePadding="4dp"
                     android:drawableTop="@drawable/new_order_status_shouhuo"
                     android:gravity="center"
                     android:text="待收货"
@@ -203,7 +203,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawablePadding="10dp"
+                    android:drawablePadding="4dp"
                     android:drawableTop="@drawable/icon_order_status_finish"
                     android:gravity="center"
                     android:text="已完成"
@@ -214,7 +214,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawablePadding="10dp"
+                    android:drawablePadding="4dp"
                     android:drawableTop="@drawable/new_order_status_help"
                     android:gravity="center"
                     android:text="售后"
@@ -336,40 +336,43 @@
 
     </com.xpf.shoppingmall.view.MyScrollView>
 
-    <TextView
-        android:id="@+id/tv_usercenter"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/titleColor"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="个人中心"
-        android:textColor="#fff"
-        android:textSize="16sp" />
-
     <FrameLayout
+        android:background="@color/titleColor"
+        android:id="@+id/flTitleLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_height="64dp">
 
             <ImageButton
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
                 android:id="@+id/ib_user_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:background="@drawable/new_user_setting" />
 
             <ImageButton
+                android:layout_marginEnd="16dp"
                 android:id="@+id/ib_user_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
                 android:background="@drawable/new_message_icon" />
+
+            <TextView
+                android:id="@+id/tv_usercenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:text="个人中心"
+                android:textColor="#fff"
+                android:textSize="16sp" />
 
         </RelativeLayout>
 

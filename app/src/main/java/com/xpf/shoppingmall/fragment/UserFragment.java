@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -73,6 +74,8 @@ public class UserFragment extends BaseFragment {
     ImageButton ibUserSetting;
     @BindView(R.id.ib_user_message)
     ImageButton ibUserMessage;
+    @BindView(R.id.flTitleLayout)
+    FrameLayout flTitleLayout;
     private int requestCode = 1;
 
     @Override
@@ -80,7 +83,7 @@ public class UserFragment extends BaseFragment {
         Log.e("TAG", "用户面的UI被初始化了");
         View view = View.inflate(mContext, R.layout.fragment_user, null);
         ButterKnife.bind(this, view);
-        tvUsercenter.setAlpha(0);
+        flTitleLayout.setAlpha(0);
         return view;
     }
 
@@ -89,33 +92,26 @@ public class UserFragment extends BaseFragment {
         super.initData();
         Log.e("TAG", "用户面的数据被初始化了");
 
-        scrollview.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                int[] location = new int[2];
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        break;
-
-                    case MotionEvent.ACTION_MOVE: // 下滑是正，上滑是负
-                        // 初始状态为125,即最大值是125，全部显示不透明是(40?)
-                        ibUserIconAvator.getLocationOnScreen(location);
-                        float i = (location[1] - 40) / 85f;
-                        tvUsercenter.setAlpha(1 - i);
-                        break;
-                }
-                return false;
+        scrollview.setOnTouchListener((v, event) -> {
+            int[] location = new int[2];
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    break;
+                case MotionEvent.ACTION_MOVE: // 下滑是正，上滑是负
+                    // 初始状态为125,即最大值是125，全部显示不透明是(40?)
+                    flTitleLayout.getLocationOnScreen(location);
+                    float i = (location[1] - 40) / 85f;
+                    flTitleLayout.setAlpha(1 - i);
+                    break;
             }
+            return false;
         });
     }
-
 
     @OnClick({R.id.ib_user_icon_avator, R.id.ib_user_setting, R.id.ib_user_message, R.id.tv_all_order})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ib_user_icon_avator:
-//                startActivity(new Intent(mContext, LoginActivity.class));
                 startActivityForResult(new Intent(mContext, LoginActivity.class), requestCode);
                 break;
             case R.id.ib_user_setting:

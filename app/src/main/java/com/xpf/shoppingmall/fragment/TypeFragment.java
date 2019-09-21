@@ -43,11 +43,9 @@ public class TypeFragment extends BaseFragment {
 
     @Override
     public View initView() {
-
         Log.e("TAG", "分类面的UI被初始化了");
         View view = View.inflate(mContext, R.layout.fragment_type, null);
         ButterKnife.bind(this, view);
-
         return view;
     }
 
@@ -76,7 +74,6 @@ public class TypeFragment extends BaseFragment {
     }
 
     private void initFragment() {
-
         fragmentList = new ArrayList<>();
         typeListFragment = new TypeListFragment();
         typeTagFragment = new TypeTagFragment();

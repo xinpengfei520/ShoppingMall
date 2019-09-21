@@ -1,6 +1,5 @@
 package com.xpf.shoppingmall.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,13 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.base.BaseActivity;
 import com.xys.libzxing.zxing.activity.CaptureActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ScanResultActivity extends Activity {
-
+public class ScanResultActivity extends BaseActivity {
 
     @BindView(R.id.tv_content)
     TextView tvContent;

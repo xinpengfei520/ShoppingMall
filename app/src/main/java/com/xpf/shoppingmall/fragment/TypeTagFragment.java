@@ -33,19 +33,16 @@ public class TypeTagFragment extends BaseFragment {
     private TagGridViewAdapter adapter;
     private List<TagBean.ResultBean> result;
 
-
     @Override
     public View initView() {
         View view = View.inflate(mContext, R.layout.fragment_tag, null);
         ButterKnife.bind(this, view);
-
         return view;
     }
 
     @Override
     public void initData() {
         super.initData();
-
         getDataFromNet(); //联网获取数据
     }
 

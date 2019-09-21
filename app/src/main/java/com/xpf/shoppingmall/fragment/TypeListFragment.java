@@ -49,7 +49,6 @@ public class TypeListFragment extends BaseFragment {
     public View initView() {
         View view = View.inflate(mContext, R.layout.fragment_typelist, null);
         ButterKnife.bind(this, view);
-
         return view;
     }
 
@@ -76,7 +75,6 @@ public class TypeListFragment extends BaseFragment {
 
         @Override
         public void onResponse(String response, int id) {
-
             switch (id) {
                 case 100:
                     if (response != null) {

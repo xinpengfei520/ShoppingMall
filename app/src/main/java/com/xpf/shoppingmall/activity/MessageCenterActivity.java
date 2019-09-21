@@ -1,17 +1,17 @@
 package com.xpf.shoppingmall.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageButton;
 
 import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.base.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 // 消息中心页面
-public class MessageCenterActivity extends Activity {
+public class MessageCenterActivity extends BaseActivity {
 
     @BindView(R.id.ib_login_back)
     ImageButton ibLoginBack;

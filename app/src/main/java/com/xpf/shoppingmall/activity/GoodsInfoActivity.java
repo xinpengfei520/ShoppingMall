@@ -1,6 +1,5 @@
 package com.xpf.shoppingmall.activity;
 
-import android.app.Activity;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -23,6 +22,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.xpf.shoppingmall.R;
+import com.xpf.shoppingmall.base.BaseActivity;
 import com.xpf.shoppingmall.domain.GoodsBean;
 import com.xpf.shoppingmall.utils.CartStorage;
 
@@ -32,7 +32,7 @@ import butterknife.OnClick;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
 // 商品详情页面
-public class GoodsInfoActivity extends Activity implements View.OnClickListener {
+public class GoodsInfoActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.ib_good_info_back)
     ImageButton ibGoodInfoBack;
