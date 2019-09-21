@@ -15,8 +15,8 @@ android {
         applicationId "com.xpf.shoppingmall"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
-        versionCode 2
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
@@ -127,7 +127,7 @@ def readProperties(key) {
 }
 
 static def getUpdateDescription() {
-    return '1.提升用户体验;\n2.修复一些bug;'
+    return '1.UI界面显示优化;\n2.修复一些bug;'
 }
 
 task("uploadApk") {
