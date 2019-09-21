@@ -1,4 +1,0 @@
-file=/Users/pengfeixin/AndroidStudioProjects/ShoppingMall/app/build/outputs/mapping/release/mapping.txt
-sha1=b782bfdc5694406a2c5d77d8f8321731706c01a5
-appId=a49bb24dcd
-
