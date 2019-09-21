@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#FF5000"
+    android:gravity="center_vertical"
     android:orientation="horizontal">
 
     <TextView
@@ -12,9 +13,11 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="5dp"
         android:drawableTop="@drawable/scan"
+        android:drawablePadding="2dp"
+        android:gravity="center"
         android:text="扫一扫"
         android:textColor="@android:color/white"
-        android:textSize="14sp" />
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/tv_search_home"
@@ -37,7 +40,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:drawableTop="@drawable/new_message_icon"
+        android:drawablePadding="2dp"
+        android:gravity="center"
         android:text="消息"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        android:textSize="12sp" />
 
 </LinearLayout>

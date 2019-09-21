@@ -17,8 +17,8 @@
         android:id="@+id/rg_main"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
         android:background="@drawable/bg_white_top_gray_divider"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <RadioButton
@@ -37,7 +37,6 @@
             android:id="@+id/rb_community"
             style="@style/MainButtonStyle"
             android:drawableTop="@drawable/community_button_selector"
-            android:paddingTop="10dp"
             android:text="发现" />
 
         <RadioButton
